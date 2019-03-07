@@ -28,7 +28,7 @@ fontsize=25
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>170</x>
+      <x>205</x>
       <y>150</y>
       <w>105</w>
       <h>25</h>
@@ -40,7 +40,7 @@ fontsize=25
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>195</x>
+      <x>230</x>
       <y>140</y>
       <w>15</w>
       <h>20</h>
@@ -51,7 +51,7 @@ fontsize=25
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>180</x>
+      <x>215</x>
       <y>190</y>
       <w>40</w>
       <h>35</h>
@@ -62,7 +62,7 @@ fontsize=25
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>195</x>
+      <x>230</x>
       <y>170</y>
       <w>15</w>
       <h>30</h>
@@ -73,7 +73,7 @@ fontsize=25
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>195</x>
+      <x>230</x>
       <y>190</y>
       <w>115</w>
       <h>25</h>
@@ -85,7 +85,7 @@ fontsize=25
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>175</x>
+      <x>210</x>
       <y>200</y>
       <w>85</w>
       <h>50</h>
@@ -98,7 +98,7 @@ fontsize=25
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>130</x>
+      <x>165</x>
       <y>290</y>
       <w>90</w>
       <h>20</h>
@@ -109,7 +109,7 @@ fontsize=25
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>280</x>
+      <x>315</x>
       <y>195</y>
       <w>110</w>
       <h>20</h>
@@ -120,7 +120,7 @@ fontsize=25
   <element>
     <id>UMLSyncBarHorizontal</id>
     <coordinates>
-      <x>170</x>
+      <x>205</x>
       <y>235</y>
       <w>40</w>
       <h>10</h>
@@ -132,7 +132,7 @@ fontsize=25
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>170</x>
+      <x>205</x>
       <y>235</y>
       <w>15</w>
       <h>25</h>
@@ -143,7 +143,7 @@ fontsize=25
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>205</x>
+      <x>240</x>
       <y>235</y>
       <w>25</w>
       <h>35</h>
@@ -154,7 +154,7 @@ fontsize=25
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>220</x>
+      <x>255</x>
       <y>260</y>
       <w>80</w>
       <h>35</h>
@@ -166,7 +166,7 @@ the board</panel_attributes>
   <element>
     <id>UMLSyncBarHorizontal</id>
     <coordinates>
-      <x>230</x>
+      <x>265</x>
       <y>315</y>
       <w>40</w>
       <h>10</h>
@@ -179,7 +179,7 @@ player ready
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>245</x>
+      <x>280</x>
       <y>290</y>
       <w>25</w>
       <h>40</h>
@@ -190,7 +190,7 @@ player ready
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
+      <x>235</x>
       <y>305</y>
       <w>50</w>
       <h>25</h>
@@ -201,7 +201,7 @@ player ready
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>250</x>
+      <x>285</x>
       <y>315</y>
       <w>105</w>
       <h>30</h>
@@ -213,7 +213,7 @@ player ready
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>300</x>
+      <x>335</x>
       <y>245</y>
       <w>165</w>
       <h>100</h>
@@ -225,7 +225,7 @@ player ready
   <element>
     <id>UMLSyncBarHorizontal</id>
     <coordinates>
-      <x>240</x>
+      <x>275</x>
       <y>330</y>
       <w>75</w>
       <h>10</h>
@@ -237,7 +237,7 @@ player ready
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>215</x>
+      <x>250</x>
       <y>350</y>
       <w>85</w>
       <h>20</h>
@@ -248,7 +248,7 @@ player ready
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
+      <x>305</x>
       <y>330</y>
       <w>20</w>
       <h>30</h>
@@ -259,7 +259,7 @@ player ready
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>120</x>
+      <x>155</x>
       <y>250</y>
       <w>95</w>
       <h>30</h>
@@ -270,7 +270,7 @@ player ready
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>170</x>
+      <x>205</x>
       <y>275</y>
       <w>15</w>
       <h>25</h>
@@ -281,7 +281,7 @@ player ready
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>285</x>
+      <x>320</x>
       <y>225</y>
       <w>85</w>
       <h>30</h>
@@ -293,7 +293,7 @@ the boats</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>300</x>
+      <x>335</x>
       <y>210</y>
       <w>15</w>
       <h>25</h>
@@ -304,7 +304,7 @@ the boats</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>215</x>
+      <x>250</x>
       <y>390</y>
       <w>20</w>
       <h>20</h>
@@ -316,7 +316,7 @@ type=decision</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
+      <x>255</x>
       <y>365</y>
       <w>15</w>
       <h>35</h>
@@ -327,7 +327,7 @@ type=decision</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>155</x>
+      <x>190</x>
       <y>395</y>
       <w>80</w>
       <h>90</h>
@@ -339,7 +339,7 @@ game end</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>230</x>
+      <x>265</x>
       <y>375</y>
       <w>125</w>
       <h>35</h>
@@ -352,7 +352,7 @@ player</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>345</x>
+      <x>380</x>
       <y>370</y>
       <w>20</w>
       <h>20</h>
@@ -364,7 +364,7 @@ type=decision</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
+      <x>385</x>
       <y>340</y>
       <w>140</w>
       <h>40</h>
@@ -376,7 +376,7 @@ player</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
+      <x>385</x>
       <y>385</y>
       <w>45</w>
       <h>30</h>
@@ -387,7 +387,7 @@ player</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>385</x>
+      <x>420</x>
       <y>395</y>
       <w>20</w>
       <h>20</h>
@@ -399,7 +399,7 @@ type=decision</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>390</x>
+      <x>425</x>
       <y>380</y>
       <w>100</w>
       <h>25</h>
@@ -411,7 +411,7 @@ player 2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>390</x>
+      <x>425</x>
       <y>400</y>
       <w>100</w>
       <h>25</h>
@@ -423,7 +423,7 @@ computer</panel_attributes>
   <element>
     <id>UMLSyncBarVertical</id>
     <coordinates>
-      <x>475</x>
+      <x>510</x>
       <y>355</y>
       <w>10</w>
       <h>65</h>
@@ -436,7 +436,7 @@ bg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>475</x>
+      <x>510</x>
       <y>370</y>
       <w>160</w>
       <h>35</h>
@@ -448,7 +448,7 @@ make a move</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>515</x>
+      <x>550</x>
       <y>435</y>
       <w>20</w>
       <h>20</h>
@@ -460,7 +460,7 @@ type=decision</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>495</x>
+      <x>530</x>
       <y>395</y>
       <w>100</w>
       <h>25</h>
@@ -471,7 +471,7 @@ type=decision</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>515</x>
+      <x>550</x>
       <y>415</y>
       <w>20</w>
       <h>30</h>
@@ -482,7 +482,7 @@ type=decision</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>495</x>
+      <x>530</x>
       <y>430</y>
       <w>35</w>
       <h>25</h>
@@ -494,7 +494,7 @@ yes</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>515</x>
+      <x>550</x>
       <y>440</y>
       <w>30</w>
       <h>55</h>
@@ -506,7 +506,7 @@ no</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>410</x>
+      <x>445</x>
       <y>435</y>
       <w>95</w>
       <h>30</h>
@@ -517,7 +517,7 @@ no</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>380</x>
+      <x>415</x>
       <y>475</y>
       <w>140</w>
       <h>20</h>
@@ -528,7 +528,7 @@ no</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
+      <x>325</x>
       <y>470</y>
       <w>20</w>
       <h>30</h>
@@ -539,7 +539,7 @@ no</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>395</x>
+      <x>430</x>
       <y>440</y>
       <w>25</w>
       <h>15</h>
@@ -550,7 +550,7 @@ no</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>335</x>
+      <x>370</x>
       <y>425</y>
       <w>65</w>
       <h>45</h>
@@ -564,7 +564,7 @@ a boat?</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>240</x>
+      <x>275</x>
       <y>430</y>
       <w>90</w>
       <h>45</h>
@@ -576,7 +576,7 @@ inform</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>325</x>
+      <x>360</x>
       <y>445</y>
       <w>20</w>
       <h>20</h>
@@ -587,7 +587,7 @@ inform</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>275</x>
+      <x>310</x>
       <y>505</y>
       <w>80</w>
       <h>35</h>
@@ -599,7 +599,7 @@ player</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>305</x>
+      <x>340</x>
       <y>470</y>
       <w>85</w>
       <h>30</h>
@@ -610,7 +610,7 @@ player</panel_attributes>
   <element>
     <id>UMLSyncBarHorizontal</id>
     <coordinates>
-      <x>280</x>
+      <x>315</x>
       <y>485</y>
       <w>40</w>
       <h>10</h>
@@ -622,7 +622,7 @@ player</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>295</x>
+      <x>330</x>
       <y>485</y>
       <w>15</w>
       <h>30</h>
@@ -633,7 +633,7 @@ player</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>215</x>
+      <x>250</x>
       <y>405</y>
       <w>75</w>
       <h>155</h>
@@ -644,7 +644,7 @@ player</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>110</x>
+      <x>145</x>
       <y>475</y>
       <w>85</w>
       <h>45</h>
@@ -656,7 +656,7 @@ the winner</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>105</x>
+      <x>140</x>
       <y>425</y>
       <w>25</w>
       <h>65</h>
@@ -667,7 +667,7 @@ the winner</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>90</x>
+      <x>125</x>
       <y>380</y>
       <w>60</w>
       <h>50</h>
@@ -679,7 +679,7 @@ a new game</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>120</x>
+      <x>155</x>
       <y>335</y>
       <w>20</w>
       <h>20</h>
@@ -691,7 +691,7 @@ type=decision</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
+      <x>125</x>
       <y>350</y>
       <w>50</w>
       <h>40</h>
@@ -702,7 +702,7 @@ type=decision</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>195</x>
+      <x>230</x>
       <y>85</y>
       <w>10</w>
       <h>10</h>
@@ -713,7 +713,7 @@ type=decision</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>125</x>
+      <x>160</x>
       <y>75</y>
       <w>85</w>
       <h>270</h>
@@ -725,7 +725,7 @@ yes</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>175</x>
+      <x>210</x>
       <y>115</y>
       <w>90</w>
       <h>30</h>
@@ -737,7 +737,7 @@ name</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>195</x>
+      <x>230</x>
       <y>90</y>
       <w>15</w>
       <h>30</h>
@@ -748,7 +748,7 @@ name</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>75</x>
+      <x>110</x>
       <y>335</y>
       <w>20</w>
       <h>20</h>
@@ -759,7 +759,7 @@ name</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>85</x>
+      <x>120</x>
       <y>340</y>
       <w>45</w>
       <h>15</h>
@@ -770,7 +770,7 @@ name</panel_attributes>
   <element>
     <id>UMLObject</id>
     <coordinates>
-      <x>70</x>
+      <x>105</x>
       <y>0</y>
       <w>565</w>
       <h>580</h>
@@ -782,7 +782,7 @@ bg=white</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>0</x>
+      <x>35</x>
       <y>815</y>
       <w>40</w>
       <h>60</h>
@@ -793,7 +793,7 @@ bg=white</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>65</x>
+      <x>100</x>
       <y>615</y>
       <w>665</w>
       <h>510</h>
@@ -805,7 +805,7 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>160</x>
+      <x>195</x>
       <y>800</y>
       <w>105</w>
       <h>50</h>
@@ -817,7 +817,7 @@ a new game</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>30</x>
+      <x>65</x>
       <y>810</y>
       <w>135</w>
       <h>25</h>
@@ -828,7 +828,7 @@ a new game</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
+      <x>235</x>
       <y>850</y>
       <w>80</w>
       <h>50</h>
@@ -840,7 +840,7 @@ a new game</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>205</x>
+      <x>240</x>
       <y>745</y>
       <w>80</w>
       <h>60</h>
@@ -852,7 +852,7 @@ a new game</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>155</x>
+      <x>190</x>
       <y>890</y>
       <w>135</w>
       <h>55</h>
@@ -863,7 +863,7 @@ a new game</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>145</x>
+      <x>180</x>
       <y>675</y>
       <w>130</w>
       <h>75</h>
@@ -874,7 +874,7 @@ a new game</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
+      <x>305</x>
       <y>660</y>
       <w>160</w>
       <h>75</h>
@@ -888,7 +888,7 @@ mode}</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>425</x>
+      <x>460</x>
       <y>640</y>
       <w>120</w>
       <h>55</h>
@@ -899,7 +899,7 @@ mode}</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>265</x>
+      <x>300</x>
       <y>730</y>
       <w>140</w>
       <h>60</h>
@@ -912,7 +912,7 @@ mode}</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>390</x>
+      <x>425</x>
       <y>770</y>
       <w>145</w>
       <h>65</h>
@@ -924,7 +924,7 @@ for second player</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>170</x>
+      <x>205</x>
       <y>970</y>
       <w>125</w>
       <h>55</h>
@@ -935,7 +935,7 @@ for second player</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>30</x>
+      <x>65</x>
       <y>825</y>
       <w>150</w>
       <h>195</h>
@@ -946,7 +946,7 @@ for second player</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>30</x>
+      <x>65</x>
       <y>830</y>
       <w>335</w>
       <h>155</h>
@@ -957,7 +957,7 @@ for second player</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>350</x>
+      <x>385</x>
       <y>940</y>
       <w>115</w>
       <h>55</h>
@@ -968,7 +968,7 @@ for second player</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>380</x>
+      <x>415</x>
       <y>1045</y>
       <w>145</w>
       <h>55</h>
@@ -980,7 +980,7 @@ move</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>405</x>
+      <x>440</x>
       <y>990</y>
       <w>80</w>
       <h>70</h>
@@ -992,7 +992,7 @@ move</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>720</x>
+      <x>755</x>
       <y>770</y>
       <w>50</w>
       <h>60</h>
@@ -1003,7 +1003,7 @@ move</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>695</x>
+      <x>730</x>
       <y>765</y>
       <w>50</w>
       <h>25</h>
@@ -1014,7 +1014,7 @@ move</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>580</x>
+      <x>615</x>
       <y>750</y>
       <w>120</w>
       <h>40</h>
@@ -1025,7 +1025,7 @@ move</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>570</x>
+      <x>605</x>
       <y>860</y>
       <w>135</w>
       <h>70</h>
@@ -1037,7 +1037,7 @@ to Actor</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
+      <x>665</x>
       <y>785</y>
       <w>80</w>
       <h>80</h>

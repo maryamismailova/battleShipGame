@@ -11,6 +11,13 @@ public class Ship {
 		hits=new ArrayList<Coordinate>();
 	}
 	
+	public String toString() {
+		String s="";
+		for(int i=0;i<coord.length;i++) {
+			s+=Coordinate.coordinateToString(coord[i])+" ";
+		}
+		return s;
+	}
 	public boolean contains(Coordinate c) {
 		for(int i=0;i<coord.length;i++) {
 			if(coord[i].x == c.x && coord[i].y == c.y) return true;
