@@ -8,4 +8,5 @@ public abstract class Player{
 	String name;
 	public abstract void initializeBoard();
 	public abstract Coordinate makeMove();
+	public abstract void addHitOnPlayer(Coordinate c);
 }

@@ -25,6 +25,13 @@ public class Ship {
 		return false;
 	}
 	
+	public boolean containsHit(Coordinate c) {
+        for(int i=0;i<hits.size();i++) {
+            if(hits.get(i).x == c.x && hits.get(i).y == c.y) return true;
+        }
+        return false;
+    }
+	
 	public boolean wasHit(Coordinate c) {
 		for(int i=0;i<hits.size();i++) {
 			if(hits.get(i).x==c.x && hits.get(i).y==c.y) return true;

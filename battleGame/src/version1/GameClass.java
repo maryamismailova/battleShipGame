@@ -7,6 +7,8 @@ public class GameClass {
 		GameBoard game=new GameBoard();
 		game.printBoard(game.players[0]);
 		game.printBoard(game.players[1]);
+//		System.out.println("evvdv");
+//		game.startGame();
 //		Coordinate c=new Coordinate("B2");
 //		System.out.println("c.x="+c.x+" c.y="+c.y);
 //		String s=Coordinate.coordinateToString(c);
