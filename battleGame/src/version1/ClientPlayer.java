@@ -6,6 +6,7 @@ public class ClientPlayer extends Player {
 
 	@Override
 	public void initializeBoard() {
+		System.out.println("Player "+this.name+" enter boat coordinates\n");
 		for(int i=0;i<5;i++) {
 			System.out.println("Boat "+i);
 			Scanner in=new Scanner(System.in);

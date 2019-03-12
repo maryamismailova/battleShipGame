@@ -9,4 +9,5 @@ public abstract class Player{
 	public abstract void initializeBoard();
 	public abstract Coordinate makeMove();
 	public abstract void addHitOnPlayer(Coordinate c);
+
 }
