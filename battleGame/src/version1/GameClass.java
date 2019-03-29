@@ -4,11 +4,14 @@ public class GameClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		GameBoard game=new GameBoard();
+		/*GameBoard game=new GameBoard();
 		game.printBoard(game.players[0]);
 		game.printBoard(game.players[1]);
 		game.startGame();
+		*/
 		
+		Player p1=new ClientPlayer("p1");
+		p1.initializeBoard();
 		
 //		System.out.println("evvdv");
 //		Coordinate c=new Coordinate("B2");

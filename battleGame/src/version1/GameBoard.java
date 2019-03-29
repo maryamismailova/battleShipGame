@@ -41,8 +41,33 @@ public class GameBoard {
 		return true;
 	}
 	
+	public final static void clearConsole()//DOESN'T WORK !
+	{
+	    try
+	    {
+	        final String os = System.getProperty("os.name");
+
+	        if (os.contains("Windows"))
+	        {
+	            Runtime.getRuntime().exec("cls");
+	        }
+	        else if(os.contains("Linux"))
+	        {
+	            Runtime.getRuntime().exec("clear");
+	        }else {
+	        	for(int i=0;i<50;i++)System.out.println("\r\n");
+	        }
+	        System.out.println("Next player!\n");
+	    }
+	    catch (final Exception e)
+	    {
+	        //  Handle any exceptions.
+	    }
+	}
+
+	
 	public void printHitsBoard(Player p) {
-		System.out.println("Player: "+p.name);
+		System.out.println("Player's game board!");
 		char board[][]=new char[10][10];
 		for(int i=0;i<10;i++) {
 			for(int j=0;j<10;j++) {
@@ -119,8 +144,10 @@ public class GameBoard {
 	        	else nextPlayer=0;
 	        	
 	        	printHitsBoard(players[nextPlayer]);
-	            Coordinate playerMove=players[currentPlayer].makeMove();
-	            System.out.println("Player : "+players[currentPlayer].name+" move: "+playerMove);
+	            Coordinate playerMove=null;
+	            while(playerMove==null)playerMove=players[currentPlayer].makeMove();
+            	
+	            System.out.println("Player : "+players[currentPlayer].name+" move: "+Coordinate.coordinateToString(playerMove));
 	            
 	            while(checkIfHit(playerMove)==true /*&& gameWon==false*/) {
 	            	System.out.println("Player: "+players[currentPlayer].name+" hit!");
@@ -134,13 +161,14 @@ public class GameBoard {
 	                    }
 	                }
 	                printHitsBoard(players[nextPlayer]);
-	                playerMove=players[currentPlayer].makeMove();
-
+	                playerMove=null;
+	                while(playerMove==null)playerMove=players[currentPlayer].makeMove();	                
 	            }
+	            clearConsole();
+	            currentPlayer=nextPlayer;
 	            if(gameWon==false) {
 		            System.out.println("Player: "+players[currentPlayer].name+" no hit!");	            	
 	            }
-	            currentPlayer=nextPlayer;
 	        }
 	 }
 }

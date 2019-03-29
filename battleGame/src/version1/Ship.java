@@ -24,6 +24,12 @@ public class Ship {
 		}
 		return false;
 	}
+	public boolean containsInN(Coordinate c) {
+		for(int i=0;i<coord.length;i++) {
+			if(coord[i].x == c.x && coord[i].y == c.y) return true;
+		}
+		return false;
+	}
 	
 	public boolean containsHit(Coordinate c) {
         for(int i=0;i<hits.size();i++) {

@@ -8,15 +8,19 @@ public class ClientPlayer extends Player {
 	public void initializeBoard() {
 		System.out.println("Player "+this.name+" enter boat coordinates\n");
 		for(int i=0;i<5;i++) {
+			//get Boat coordinates
 			System.out.println("Boat "+i);
 			Scanner in=new Scanner(System.in);
 			String pointString=in.nextLine();
-			String[] points=pointString.split(" ");
-			Coordinate[] coordinates=new Coordinate[points.length];
-			for(int j=0;j<coordinates.length;j++) {
-				coordinates[j]=new Coordinate(points[j]);
+			try {
+				ships[i]=addAShip(pointString, i);
+			} catch (CoordinateOutOfBonds | UnavailableShipException e) {
+//				e.printStackTrace();
+				System.out.println("try once more: "+e.getMessage());
+				i--;
+				continue;
 			}
-			ships[i]=new Ship(coordinates);
+			
 			System.out.println("Boat coord: "+ships[i]);
 		}
 	}
@@ -35,11 +39,17 @@ public class ClientPlayer extends Player {
 	}
 	
 	@Override
-	public Coordinate makeMove() {
+	public Coordinate makeMove(){
 		System.out.println("Player "+this.name+" make a move: ");
 		Scanner in=new Scanner(System.in);
-		Coordinate coord=new Coordinate(in.nextLine());
-		return coord;
+		Coordinate coord;
+		try {
+			coord = new Coordinate(in.nextLine());
+			return coord;
+		} catch (CoordinateOutOfBonds e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
 	}
 
 }
