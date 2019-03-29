@@ -29,15 +29,16 @@ public class ClientPlayer extends Player {
 		this.name=name;
 		ships=new Ship[5]; 
 	}
-	public void addHitOnPlayer(Coordinate c) {
-		for(int i=0;i<ships.length;i++) {
-			if(ships[i].contains(c)==true) {
-				ships[i].addHit(c);
-				break;
-			}
-		}
-	}
 	
+//	public void addHitOnPlayer(Coordinate c) {
+//		for(int i=0;i<ships.length;i++) {
+//			if(ships[i].contains(c)==true) {
+//				ships[i].addHit(c);
+//				break;
+//			}
+//		}
+//	}
+//	
 	@Override
 	public Coordinate makeMove(){
 		System.out.println("Player "+this.name+" make a move: ");

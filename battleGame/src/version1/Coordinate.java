@@ -3,10 +3,16 @@ package version1;
 public class Coordinate {
 	int x, y;
 
-	public Coordinate(int x, int y) {
+	public Coordinate(int x, int y)  throws CoordinateOutOfBonds {
 		super();
 		this.x = x;
 		this.y = y;
+		if(x>=10 || x<0) {
+			throw new CoordinateOutOfBonds("Coordinates: "+this.x+" "+this.y +": 0<=x<10");
+		}
+		else if(y>=10 || y<0) {
+			throw new CoordinateOutOfBonds("Coordinates: "+this.x+" "+this.y +": 0<=y<10");
+		}
 	}
 	
 	public Coordinate(String coord) throws CoordinateOutOfBonds{
@@ -29,6 +35,13 @@ public class Coordinate {
 		s+=(char)((int)'A'+c.x);
 		s+=c.y;
 //		System.out.println("Coordinate: "+s);
+		return s;
+	}
+	
+	public String toString() {
+		String s="";
+		s+=(char)((int)'A'+this.x);
+		s+=this.y;
 		return s;
 	}
 }

@@ -1,6 +1,7 @@
 package version1;
 
 public class GameBoard {
+	final static int BOARDIM=10;
 	Player[] players;
 	int currentPlayer;
 	boolean gameWon=false;
@@ -57,7 +58,7 @@ public class GameBoard {
 	        }else {
 	        	for(int i=0;i<50;i++)System.out.println("\r\n");
 	        }
-	        System.out.println("Next player!\n");
+//	        System.out.println("Next player!\n");
 	    }
 	    catch (final Exception e)
 	    {
@@ -97,7 +98,7 @@ public class GameBoard {
 	}
 	
 	
-	public void printBoard(Player p) {
+	public static void printBoard(Player p) {
 		System.out.println("Player: "+p.name);
 		char board[][]=new char[10][10];
 		for(int i=0;i<10;i++) {
@@ -135,6 +136,11 @@ public class GameBoard {
         players[0].initializeBoard();
         players[1].initializeBoard();
 	}
+	public GameBoard(Player [] players) {
+		this.players=players;
+        players[0].initializeBoard();
+        players[1].initializeBoard();
+	}
 	
 	 public void startGame() {
 	        currentPlayer = 0;
@@ -167,7 +173,8 @@ public class GameBoard {
 	            clearConsole();
 	            currentPlayer=nextPlayer;
 	            if(gameWon==false) {
-		            System.out.println("Player: "+players[currentPlayer].name+" no hit!");	            	
+		            System.out.println("Player: "+players[currentPlayer].name+" no hit!");
+		            System.out.println("Next Player!");
 	            }
 	        }
 	 }
