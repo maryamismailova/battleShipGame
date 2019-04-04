@@ -1,36 +1,67 @@
-package versionGUI2;
+package versionGUI;
 
 import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentEvent;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.ComponentListener;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
-import versionGUI.PlayerGUI.BoardCell;
-
-public class PlayerGUI extends JPanel{
+public class PlayerBoardSetupGUI extends JPanel {
+	PlayerPanel playerPanel;
+	PlayerBoardSetupGUI playerSetup=this;
+	GridBagLayout gbLayout=new GridBagLayout();
+	GridBagConstraints gbc = new GridBagConstraints();
+	JTextPane text;
+	BoardCell[][] boardCells=new BoardCell[GameBoard.BOARDIM][GameBoard.BOARDIM];
 	int readyShips;
 	ArrayList<Coordinate> shipCoordinates=new ArrayList();
 	Player player;
-	BoardCell[][] boardCells=new BoardCell[GameBoard.BOARDIM][GameBoard.BOARDIM];
 	
-	public PlayerGUI(Player player) {
-		this.readyShips=0;
-		this.player=player;
+	public void setVisibilityOff() {
+		this.setVisible(false);
+	}
+	
+	public PlayerBoardSetupGUI(PlayerPanel playerPanel) {
+		super();
+		this.player=playerPanel.player;
+		this.playerPanel=playerPanel;
+		
+		text=new JTextPane();
+		text.setText("Player set the board");
+	
 		GridLayout cellLayout=new GridLayout(GameBoard.BOARDIM+1, GameBoard.BOARDIM+1);
 		
 		JPanel cells=new JPanel();
 		cells.setLayout(cellLayout);		
-		
+		int x,y;
+		x=GameBoard.BOARDIM+1;
+		y=x;
+		//fill the table with coordinates and buttons
+		for(int i=0;i<y;i++) {
+			for(int j=0;j<x;j++) {
+				if(i==0) {
+					JTextPane text=new JTextPane();
+					if(j==0) text.setText(" ");
+					else text.setText(Character.toString((char)('A'+j-1)));
+					cells.add(text);
+				}else if(j==0 && i>0) {
+					JTextPane text=new JTextPane();
+					text.setText(" "+i);
+					cells.add(text);
+				}else {
+					boardCells[i-1][j-1]=new BoardCell();
+					boardCells[i-1][j-1].setBackground(Color.WHITE);
+					cells.add(boardCells[i-1][j-1], i*x+j);
+				}
+			}
+		}
+
 		JButton addButton=new JButton();//button to add a new ship to ships of the player
 		addButton.addActionListener(new ActionListener() {
 			@Override
@@ -60,40 +91,45 @@ public class PlayerGUI extends JPanel{
 					}
 				}
 				if(readyShips==5) {
-					cells.setVisible(false);
+					System.out.println("Player added 5 boats!");
+					playerPanel.gameBoard.nextPlayer();
+//					addButton.setVisible(false);
+//					playerPanel.gameBoard.nbSetupPlayers++;
+//					
+//					playerPanel.c.setVisible(false);
+//					System.out.println("Players finished setup: "+playerPanel.gameBoard.nbSetupPlayers);
+//					if(playerPanel.gameBoard.nbSetupPlayers==2) {
+//						System.out.println("Pass to GameMode");
+//						playerPanel.gameBoard.setupGameMode();
+//					}
 				}
 				shipCoordinates=null;
 			}
 			
 		});
+//		
+//		this.add(cells);
+//		this.add(addButton);
 		
-		this.add(cells);
-		this.add(addButton);
 		
-		int x,y;
-		x=GameBoard.BOARDIM+1;
-		y=x;
+		this.playerPanel=playerPanel;
+		this.setLayout(gbLayout);
 		
-		//fill the table with coordinates and buttons
-		for(int i=0;i<y;i++) {
-			for(int j=0;j<x;j++) {
-				if(i==0) {
-					JTextPane text=new JTextPane();
-					if(j==0) text.setText(" ");
-					else text.setText(Character.toString((char)('A'+j-1)));
-					cells.add(text);
-				}else if(j==0 && i>0) {
-					JTextPane text=new JTextPane();
-					text.setText(" "+i);
-					cells.add(text);
-				}else {
-					boardCells[i-1][j-1]=new BoardCell();
-					boardCells[i-1][j-1].setBackground(Color.WHITE);
-					cells.add(boardCells[i-1][j-1], i*x+j);
-				}
-			}
-		}
-		
+		gbc.fill = GridBagConstraints.VERTICAL;
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        this.add(text, gbc);
+ 
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.fill = GridBagConstraints.VERTICAL;
+        this.add(cells, gbc);
+ 
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.fill = GridBagConstraints.VERTICAL;
+        gbc.gridwidth = 2;
+        this.add(addButton, gbc);
 	}
 	
 	

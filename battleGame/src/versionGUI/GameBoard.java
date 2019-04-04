@@ -1,10 +1,11 @@
 package versionGUI;
 
 public class GameBoard {
-	final static int BOARDIM=10;
+	final public  static int BOARDIM=10;
 	Player[] players;
 	int currentPlayer;
 	boolean gameWon=false;
+
 	
 	public boolean checkIfHit(Coordinate move) {
 		int nextPlayer;
@@ -130,16 +131,18 @@ public class GameBoard {
 	}
 	
 	public GameBoard() {
+		this.currentPlayer=0;
 		players=new ClientPlayer[2];
 		players[0]=new ClientPlayer("player1");
 		players[1]=new ClientPlayer("player 2");
-        players[0].initializeBoard();
-        players[1].initializeBoard();
+//        players[0].initializeBoard();
+//        players[1].initializeBoard();
 	}
 	public GameBoard(Player [] players) {
 		this.players=players;
-        players[0].initializeBoard();
-        players[1].initializeBoard();
+		this.currentPlayer=0;
+//        players[0].initializeBoard();
+//        players[1].initializeBoard();
 	}
 	
 	 public void startGame() {

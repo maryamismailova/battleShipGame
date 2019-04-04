@@ -1,5 +1,4 @@
 package versionGUI;
-
 public class UnavailableShipException extends Exception {
 	String msg;
 	public UnavailableShipException(String msg) {

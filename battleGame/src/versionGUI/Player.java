@@ -1,11 +1,11 @@
 package versionGUI;
-
 import java.util.Scanner;
 
 public abstract class Player{
 //	char board[][];
 //	char opponentBoard[][];
 //	int nbOfHits;
+	boolean boardIsSet=false;
 	Ship[] ships;
 	String name;
 	public abstract void initializeBoard();
@@ -48,6 +48,7 @@ public abstract class Player{
 	
 
 	public Ship addAShip(Coordinate coordinates[], int shipCount) throws CoordinateOutOfBonds , UnavailableShipException {
+		Coordinate.sortCoordinates(coordinates);
 		//CHECK if coordinates are relevant
 		int direction=-1;
 		if(coordinates.length==1)direction=0;
@@ -114,6 +115,7 @@ public abstract class Player{
 			}
 		}
 	}
+
 	
 
 }
