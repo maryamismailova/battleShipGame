@@ -8,9 +8,7 @@ public class GameBoard {
 
 	
 	public boolean checkIfHit(Coordinate move) {
-		int nextPlayer;
-		if(currentPlayer==0)nextPlayer=1;
-		else nextPlayer=0;
+		int nextPlayer=1-currentPlayer;
 		for(int i=0;i<players[nextPlayer].ships.length;i++) {
 				if(players[nextPlayer].ships[i].contains(move)==true && players[nextPlayer].ships[i].containsHit(move)==false) return true;
 		}

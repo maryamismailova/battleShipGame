@@ -22,9 +22,9 @@ public class PlayerPanel extends JPanel {
 		c.setLayout(card);
     	this.setLayout(card);
 		boardSetup=new PlayerBoardSetupGUI(this);
-		gameMode=new PlayerGameModeGUI(this);
+//		gameMode=new PlayerGameModeGUI(this);
 		c.add(boardSetup);
-		c.add(gameMode);
+//		c.add(gameMode);
 		this.setBackground(Color.WHITE);
 		
 	}

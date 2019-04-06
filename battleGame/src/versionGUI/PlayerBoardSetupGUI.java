@@ -52,7 +52,7 @@ public class PlayerBoardSetupGUI extends JPanel {
 					cells.add(text);
 				}else if(j==0 && i>0) {
 					JTextPane text=new JTextPane();
-					text.setText(" "+i);
+					text.setText(" "+(i-1));
 					cells.add(text);
 				}else {
 					boardCells[i-1][j-1]=new BoardCell();
@@ -85,6 +85,7 @@ public class PlayerBoardSetupGUI extends JPanel {
 					}
 				} catch (CoordinateOutOfBonds | UnavailableShipException e1) {
 //					readyShips--;
+					text.setText(e1.getMessage());
 					System.out.println(e1.getMessage());
 					for(int i=0;i<shipCoordinates.size();i++) {
 						boardCells[shipCoordinates.get(i).y][shipCoordinates.get(i).x].setNotSelected();
@@ -93,15 +94,7 @@ public class PlayerBoardSetupGUI extends JPanel {
 				if(readyShips==5) {
 					System.out.println("Player added 5 boats!");
 					playerPanel.gameBoard.nextPlayer();
-//					addButton.setVisible(false);
-//					playerPanel.gameBoard.nbSetupPlayers++;
-//					
-//					playerPanel.c.setVisible(false);
-//					System.out.println("Players finished setup: "+playerPanel.gameBoard.nbSetupPlayers);
-//					if(playerPanel.gameBoard.nbSetupPlayers==2) {
-//						System.out.println("Pass to GameMode");
-//						playerPanel.gameBoard.setupGameMode();
-//					}
+
 				}
 				shipCoordinates=null;
 			}
