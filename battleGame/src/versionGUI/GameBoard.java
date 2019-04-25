@@ -136,12 +136,15 @@ public class GameBoard {
 //        players[0].initializeBoard();
 //        players[1].initializeBoard();
 	}
+	
 	public GameBoard(Player [] players) {
 		this.players=players;
 		this.currentPlayer=0;
 //        players[0].initializeBoard();
 //        players[1].initializeBoard();
 	}
+	
+	
 	
 	 public void startGame() {
 	        currentPlayer = 0;

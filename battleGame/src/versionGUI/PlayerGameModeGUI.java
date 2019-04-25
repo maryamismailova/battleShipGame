@@ -216,15 +216,24 @@ public class PlayerGameModeGUI extends JPanel {
 			}else {
 				//close this player, give the turn to the opponent
                 System.out.println("No hit!");
-				boardCells[strikeY][strikeX].setBackground(boardCells[strikeY][strikeX].striked);
-				boardCells[strikeY][strikeX].wasStriked=true;
-				playerPanel.gameBoard.player[game.currentPlayer].c.setVisible(false);
 				
-				// switch to other player
-				game.currentPlayer=1-game.currentPlayer;
-				playerPanel.gameBoard.player[game.currentPlayer].gameMode.updatePlayerShipsBoard();
-				playerPanel.gameBoard.player[game.currentPlayer].c.setVisible(true);
-				
+                if(playerPanel.gameBoard.mode==0) {
+					boardCells[strikeY][strikeX].setBackground(boardCells[strikeY][strikeX].striked);
+					boardCells[strikeY][strikeX].wasStriked=true;
+					game.currentPlayer=1-game.currentPlayer;
+					
+					playerPanel.gameBoard.nextPlayer();
+				}else {
+					boardCells[strikeY][strikeX].setBackground(boardCells[strikeY][strikeX].striked);
+					boardCells[strikeY][strikeX].wasStriked=true;
+					playerPanel.gameBoard.player[game.currentPlayer].c.setVisible(false);
+					
+					// switch to other player
+					game.currentPlayer=1-game.currentPlayer;
+					playerPanel.gameBoard.player[game.currentPlayer].gameMode.updatePlayerShipsBoard();
+					playerPanel.gameBoard.player[game.currentPlayer].c.setVisible(true);				
+					
+				}
 				/*
 				 * There is error in updatePlayerShipBoard!!
 				 * FIX IT!

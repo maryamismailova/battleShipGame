@@ -48,7 +48,7 @@ public class Coordinate {
 					throw new UnavailableShipException("Direction error!");		
 				}
 			}
-			System.out.println("Direction "+direction);
+//			System.out.println("Direction "+direction);
 			for(int i=1;i<unsorted.length;i++) {
 				int cursor=i;
 				for(int j=i-1;j>=0;j--) {
@@ -73,10 +73,10 @@ public class Coordinate {
 					}
 				}
 			}
-			System.out.println("sorted:");
-			for(int i=0;i<unsorted.length;i++) {
-				System.out.println(""+unsorted[i]+" ");
-			}
+//			System.out.println("sorted:");
+//			for(int i=0;i<unsorted.length;i++) {
+//				System.out.println(""+unsorted[i]+" ");
+//			}
 			
 		}
 //		

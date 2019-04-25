@@ -93,6 +93,7 @@ public class PlayerBoardSetupGUI extends JPanel {
 				}
 				if(readyShips==5) {
 					System.out.println("Player added 5 boats!");
+					playerPanel.gameBoard.nbSetupPlayers+=1;
 					playerPanel.gameBoard.nextPlayer();
 
 				}

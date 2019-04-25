@@ -22,21 +22,27 @@ public class GameFrame {
 		if(gameMode==0) {
 			//set Bot VS player game
 			System.out.println("Setting Player VS Bot game");
+			Player[] players=new Player[2];
+			players[0]=new ClientPlayer("P_0");
+			players[1]=new ComputerPlayer("Bot");
+			
+			game=new GameBoard(players);
+			
 		}else if(gameMode==1) {
 			//set player VS player
 			System.out.println("Setting Player VS Player");
 			Player[] players=new Player[2];
-			players[0]=new ClientPlayer("Player1");
-			players[1]=new ClientPlayer("Player2");
+			players[0]=new ClientPlayer("P_1");
+			players[1]=new ClientPlayer("P_2");
 			
 			game=new GameBoard(players);
 		}else if(gameMode==2) {
 			//set network game
 			System.out.println("Setting Network game ");
-			
+			//TODO
 		}
 		
-		BoardGUI gameBoard=new BoardGUI(game);
+		BoardGUI gameBoard=new BoardGUI(game, gameMode);
 		
 		frame.getContentPane().add(gameBoard);
 	}
