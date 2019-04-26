@@ -3,6 +3,7 @@ package versionGUI;
 import java.awt.Color;
 import java.awt.GridLayout;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -52,10 +53,15 @@ public class BoardGUI extends JPanel{
 			player[1].gameMode=new PlayerGameModeGUI(player[1]);
 			player[1].c.add(player[1].gameMode);
 			
+			player[0].c.add(player[0].waitPanel);
+			player[1].c.add(player[1].waitPanel);
+			
 			player[0].card.next(player[0].c);
 			player[1].card.next(player[1].c);
 			player[0].c.setVisible(true);
 			player[1].c.setVisible(false);
+			
+			
 		}
 	}
 	

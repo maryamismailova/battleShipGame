@@ -226,13 +226,18 @@ public class PlayerGameModeGUI extends JPanel {
 				}else {
 					boardCells[strikeY][strikeX].setBackground(boardCells[strikeY][strikeX].striked);
 					boardCells[strikeY][strikeX].wasStriked=true;
-					playerPanel.gameBoard.player[game.currentPlayer].c.setVisible(false);
+					
+					playerPanel.gameBoard.player[game.currentPlayer].card.next(playerPanel.gameBoard.player[game.currentPlayer].c);
+					playerPanel.gameBoard.player[game.currentPlayer].waitPanel.startButton.setVisible(false);
 					
 					// switch to other player
-					game.currentPlayer=1-game.currentPlayer;
-					playerPanel.gameBoard.player[game.currentPlayer].gameMode.updatePlayerShipsBoard();
-					playerPanel.gameBoard.player[game.currentPlayer].c.setVisible(true);				
+					System.out.println("Switch to second player");
 					
+					game.currentPlayer=1-game.currentPlayer;
+					playerPanel.gameBoard.player[game.currentPlayer].card.next(playerPanel.gameBoard.player[game.currentPlayer].c);
+					playerPanel.gameBoard.player[game.currentPlayer].waitPanel.startButton.setVisible(true);
+					playerPanel.gameBoard.player[game.currentPlayer].gameMode.updatePlayerShipsBoard();
+//					playerPanel.gameBoard.player[game.currentPlayer].c.setVisible(true);				
 				}
 				/*
 				 * There is error in updatePlayerShipBoard!!
@@ -242,7 +247,7 @@ public class PlayerGameModeGUI extends JPanel {
 				 * */
 				
 				
-				System.out.println("Next Player "+game.currentPlayer);
+				System.out.println("Next Player "+game.currentPlayer+ "("+game.players[game.currentPlayer].name);
 			}
 		}
 		

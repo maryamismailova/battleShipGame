@@ -81,6 +81,7 @@ public class PlayerBoardSetupGUI extends JPanel {
 					System.out.println("Added a new ship");
 					for(int i=0;i<shipCoordinates.size();i++) {
 						boardCells[shipCoordinates.get(i).y][shipCoordinates.get(i).x].setNotSelected();
+						boardCells[shipCoordinates.get(i).y][shipCoordinates.get(i).x].storedInShip=true;
 						boardCells[shipCoordinates.get(i).y][shipCoordinates.get(i).x].setBackground(Color.BLACK);
 					}
 				} catch (CoordinateOutOfBonds | UnavailableShipException e1) {
@@ -131,6 +132,7 @@ public class PlayerBoardSetupGUI extends JPanel {
 		Color selection=Color.BLUE;
 		Color taken = Color.BLACK;
 		boolean selected=false;
+		boolean storedInShip=false;
 		
 		
 		public BoardCell() {
@@ -155,14 +157,15 @@ public class PlayerBoardSetupGUI extends JPanel {
 					if(clicked.equals((JButton)boardCells[i][j])) {//find coordinates
 						try {
 							Coordinate clickedCell=new Coordinate(j,i);
-							if(boardCells[i][j].selected==false) {
+							if(boardCells[i][j].selected==false && boardCells[i][j].storedInShip==false) {
 								System.out.println("x: "+j+", y: "+i);
 								boardCells[i][j].setSelected();
 								if(shipCoordinates==null)shipCoordinates=new ArrayList<Coordinate>();
 								shipCoordinates.add(clickedCell);
-							
-							}else {
+								
+							}else if(boardCells[i][j].storedInShip==false && boardCells[i][j].selected==true){
 								//TO REMOVE COORDINATE FROM list
+								//IF NOT STORED IN A SHIP
 								for(int i1=0;i1<shipCoordinates.size();i1++) {
 									if(shipCoordinates.get(i1).equals(clickedCell))
 										shipCoordinates.remove(i1);

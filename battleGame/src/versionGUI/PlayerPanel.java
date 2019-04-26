@@ -3,7 +3,13 @@ package versionGUI;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class PlayerPanel extends JPanel {
@@ -13,6 +19,34 @@ public class PlayerPanel extends JPanel {
     PlayerGameModeGUI gameMode;
     public Player player;
     BoardGUI gameBoard;
+    JWaitPanel waitPanel;
+    
+    public class JWaitPanel extends JPanel{
+    	JButton startButton;
+    	
+    	public JWaitPanel() {
+    		super();
+    		this.setBackground(Color.GREEN);
+    		startButton=new JButton("My turn!");
+    		startButton.setBackground(Color.BLUE);
+    		startButton.setSize(new Dimension(100,100));
+    		
+    		startButton.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					card.previous(c);
+				}
+    			
+    		});
+    		
+    		this.setLayout( new GridBagLayout() );
+    		this.add(startButton, new GridBagConstraints());
+    		
+    	}
+    	
+    	
+    }
     
     public PlayerPanel(BoardGUI gameBoard, Player p) {
 		super();
@@ -25,6 +59,8 @@ public class PlayerPanel extends JPanel {
 //		gameMode=new PlayerGameModeGUI(this);
 		c.add(boardSetup);
 //		c.add(gameMode);
+		waitPanel=new JWaitPanel();
+		
 		this.setBackground(Color.WHITE);
 		
 	}
