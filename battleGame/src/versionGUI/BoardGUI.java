@@ -81,8 +81,7 @@ public class BoardGUI extends JPanel{
 				System.out.println("start game Mode!");
 				gameModeOn=true;
 				game.currentPlayer=0;
-				player[game.currentPlayer].c.setVisible(true);
-				player[1-game.currentPlayer].c.setVisible(true);
+				for(int i=0;i<nbSetupPlayers;i++)player[i].setVisible(true);
 				setupGameMode();
 			}
 			else{
