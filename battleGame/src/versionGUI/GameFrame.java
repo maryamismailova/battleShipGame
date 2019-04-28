@@ -84,7 +84,7 @@ public class GameFrame {
 		});
 		buttonList.add(multiPlayerLocal);
 		
-		JButton networkPlayers=new JButton("Player across Network");
+		JButton networkPlayers=new JButton("Player in LAN");
 		networkPlayers.setBackground(Color.GREEN);
 		networkPlayers.addActionListener(new ActionListener() {
 

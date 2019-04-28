@@ -35,6 +35,7 @@ public class PlayerPanel extends JPanel {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
+					gameMode.updatePlayerShipsBoard();
 					card.previous(c);
 				}
     			
@@ -53,12 +54,13 @@ public class PlayerPanel extends JPanel {
 		c=this;
 		this.gameBoard=gameBoard;
 		this.player=p;
-		c.setLayout(card);
+//		c.setLayout(card);
     	this.setLayout(card);
 		boardSetup=new PlayerBoardSetupGUI(this);
 //		gameMode=new PlayerGameModeGUI(this);
 		c.add(boardSetup);
-//		c.add(gameMode);
+		card.next(this);
+		
 		waitPanel=new JWaitPanel();
 		
 		this.setBackground(Color.WHITE);

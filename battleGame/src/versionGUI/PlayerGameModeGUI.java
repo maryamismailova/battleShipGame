@@ -36,12 +36,12 @@ public class PlayerGameModeGUI extends JPanel {
 		playerStrikeBoard.setLayout(cellLayout);
 		setStrikeBoard();
 		
-		System.out.println("Strike Board is set!");
+		System.out.println("Strike Board of "+playerPanel.player.name+" is set!");
 		//where player sees his board
 		playerShipsBoard=new JPanel();
 		playerShipsBoard.setLayout(new GridLayout(GameBoard.BOARDIM+1, GameBoard.BOARDIM+1));
 		setPlayerShipsBoard();
-		System.out.println("Ship Board is set!");
+		System.out.println("Ship Board of "+playerPanel.player.name+"is set!");
 		
 		this.setLayout(gbLayout);
 
@@ -55,9 +55,7 @@ public class PlayerGameModeGUI extends JPanel {
         gbc.gridy = 1;
         gbc.fill = GridBagConstraints.VERTICAL;
         this.add(playerShipsBoard, gbc);
- 		
-//		this.add(playerStrikeBoard);
-//		this.add(playerShipsBoard);
+
 		
 	}
 	
@@ -106,6 +104,7 @@ public class PlayerGameModeGUI extends JPanel {
 		}
 		updatePlayerShipsBoard();
 	}
+	
 	public void updatePlayerShipsBoard() {
 		System.out.println("Update Player Ships Board");
 		for(int i=0;i<GameBoard.BOARDIM;i++) {
@@ -118,12 +117,12 @@ public class PlayerGameModeGUI extends JPanel {
 					coord=null;
 				}
 				int currentPlayer=playerPanel.gameBoard.game.currentPlayer;
-				
-				for(int k=0;k<playerPanel.gameBoard.game.players[currentPlayer].ships.length;k++) {
-					if(playerPanel.gameBoard.game.players[currentPlayer].ships[k].containsHit(coord)) {
+				//CHANGED
+				for(int k=0;k<playerPanel.player.ships.length;k++) {
+					if(playerPanel.player.ships[k].containsHit(coord)) {
 //						System.out.println("was hit!");
 						playerCoordinates[i][j].setBackground(Color.RED);
-					}else if(playerPanel.gameBoard.game.players[currentPlayer].ships[k].contains(coord)) {
+					}else if(playerPanel.player.ships[k].contains(coord)) {
 						playerCoordinates[i][j].setBackground(Color.BLACK);
 					}
 				}
@@ -227,16 +226,16 @@ public class PlayerGameModeGUI extends JPanel {
 					boardCells[strikeY][strikeX].setBackground(boardCells[strikeY][strikeX].striked);
 					boardCells[strikeY][strikeX].wasStriked=true;
 					
-					playerPanel.gameBoard.player[game.currentPlayer].card.next(playerPanel.gameBoard.player[game.currentPlayer].c);
-					playerPanel.gameBoard.player[game.currentPlayer].waitPanel.startButton.setVisible(false);
+					playerPanel.card.next(playerPanel);
+					playerPanel.waitPanel.startButton.setVisible(false);
 					
 					// switch to other player
 					System.out.println("Switch to second player");
 					
 					game.currentPlayer=1-game.currentPlayer;
-					playerPanel.gameBoard.player[game.currentPlayer].card.next(playerPanel.gameBoard.player[game.currentPlayer].c);
+//					playerPanel.gameBoard.player[game.currentPlayer].card.previous(playerPanel.gameBoard.player[game.currentPlayer]);
 					playerPanel.gameBoard.player[game.currentPlayer].waitPanel.startButton.setVisible(true);
-					playerPanel.gameBoard.player[game.currentPlayer].gameMode.updatePlayerShipsBoard();
+//					playerPanel.gameBoard.player[game.currentPlayer].gameMode.updatePlayerShipsBoard();
 //					playerPanel.gameBoard.player[game.currentPlayer].c.setVisible(true);				
 				}
 				/*

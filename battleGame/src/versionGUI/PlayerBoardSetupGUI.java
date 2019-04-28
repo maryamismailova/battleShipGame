@@ -33,7 +33,7 @@ public class PlayerBoardSetupGUI extends JPanel {
 		this.playerPanel=playerPanel;
 		
 		text=new JTextPane();
-		text.setText("Player set the board");
+		text.setText("Player "+player.name+" set the board");
 	
 		GridLayout cellLayout=new GridLayout(GameBoard.BOARDIM+1, GameBoard.BOARDIM+1);
 		
