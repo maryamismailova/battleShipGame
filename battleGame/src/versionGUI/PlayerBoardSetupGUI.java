@@ -1,6 +1,7 @@
 package versionGUI;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -62,7 +63,9 @@ public class PlayerBoardSetupGUI extends JPanel {
 			}
 		}
 
-		JButton addButton=new JButton();//button to add a new ship to ships of the player
+		JButton addButton=new JButton("Add");//button to add a new ship to ships of the player
+		addButton.setPreferredSize(new Dimension(100,30));
+		addButton.setBackground(Color.YELLOW);
 		addButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

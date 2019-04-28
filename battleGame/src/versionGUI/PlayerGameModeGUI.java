@@ -1,6 +1,6 @@
 package versionGUI;
-
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -9,8 +9,11 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
+import javax.swing.UIManager;
 
 
 public class PlayerGameModeGUI extends JPanel {
@@ -39,20 +42,32 @@ public class PlayerGameModeGUI extends JPanel {
 		System.out.println("Strike Board of "+playerPanel.player.name+" is set!");
 		//where player sees his board
 		playerShipsBoard=new JPanel();
+		playerShipsBoard.setPreferredSize(new Dimension(250,200));
 		playerShipsBoard.setLayout(new GridLayout(GameBoard.BOARDIM+1, GameBoard.BOARDIM+1));
 		setPlayerShipsBoard();
 		System.out.println("Ship Board of "+playerPanel.player.name+"is set!");
 		
 		this.setLayout(gbLayout);
 
+        JLabel gameBoard=new JLabel("Game Board:");
+        gbc.fill = GridBagConstraints.VERTICAL;
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        this.add(gameBoard, gbc);
 
 		gbc.fill = GridBagConstraints.VERTICAL;
         gbc.gridx = 0;
-        gbc.gridy = 0;
-        this.add(playerStrikeBoard, gbc);
- 
-        gbc.gridx = 0;
         gbc.gridy = 1;
+        this.add(playerStrikeBoard, gbc);
+        
+        JLabel yourBoard=new JLabel("Your board status:");
+        gbc.fill = GridBagConstraints.VERTICAL;
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        this.add(yourBoard, gbc);
+        
+        gbc.gridx = 0;
+        gbc.gridy = 3;
         gbc.fill = GridBagConstraints.VERTICAL;
         this.add(playerShipsBoard, gbc);
 
@@ -179,6 +194,7 @@ public class PlayerGameModeGUI extends JPanel {
 					}					
 				}else break;
 			}
+			if(boardCells[strikeY][strikeX].wasHit==true || boardCells[strikeY][strikeX].wasStriked==true)return;
 			boardCells[strikeY][strikeX].wasStriked=true;
 			boardCells[strikeY][strikeX].setBackground(boardCells[strikeY][strikeX].striked);
 			
@@ -209,6 +225,23 @@ public class PlayerGameModeGUI extends JPanel {
                     if(game.checkIfWin()==true) {
                         System.out.println("Player "+playerPanel.player.name+" wins");
                         game.gameWon=true;
+                        String msg="Player "+playerPanel.player.name+" wins";
+                        UIManager.put("OptionPane.minimumSize",new Dimension(200,100));
+                        Object[] options= {"OK, exit", "New Game?"};
+                        int result=JOptionPane.showOptionDialog(this, msg, "Winner", JOptionPane.YES_NO_OPTION, 
+                        		JOptionPane.INFORMATION_MESSAGE, null, options, options[0] );
+                        if(result==JOptionPane.OK_OPTION) {
+                        	System.exit(0);                        	
+                        }
+                        else {
+                        	String msg2="Are you sure you want to start new game?";
+                        	int res=JOptionPane.showConfirmDialog(this, msg2, "New Game", JOptionPane.YES_NO_OPTION);
+                        	if(res==JOptionPane.YES_OPTION) {
+                        		GameFrame gf=new GameFrame();
+                        	}else {
+                        		System.exit(0);
+                        	}
+                        }
                     }
                 }
     			
@@ -233,18 +266,8 @@ public class PlayerGameModeGUI extends JPanel {
 					System.out.println("Switch to second player");
 					
 					game.currentPlayer=1-game.currentPlayer;
-//					playerPanel.gameBoard.player[game.currentPlayer].card.previous(playerPanel.gameBoard.player[game.currentPlayer]);
 					playerPanel.gameBoard.player[game.currentPlayer].waitPanel.startButton.setVisible(true);
-//					playerPanel.gameBoard.player[game.currentPlayer].gameMode.updatePlayerShipsBoard();
-//					playerPanel.gameBoard.player[game.currentPlayer].c.setVisible(true);				
 				}
-				/*
-				 * There is error in updatePlayerShipBoard!!
-				 * FIX IT!
-				 * ONLY WHEN NO HIT WAS MADE!
-				 * 
-				 * */
-				
 				
 				System.out.println("Next Player "+game.currentPlayer+ "("+game.players[game.currentPlayer].name);
 			}
