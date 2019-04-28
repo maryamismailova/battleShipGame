@@ -1,9 +1,13 @@
 package versionGUI;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ComputerPlayer extends Player {
 
+	ArrayList<Coordinate> madeMoves=new ArrayList<Coordinate>();
+
+	
 	public ComputerPlayer(String name) {
 		// TODO Auto-generated constructor stub
 		this.name=name;
@@ -61,16 +65,16 @@ public class ComputerPlayer extends Player {
 				int x=(int)(Math.random()*GameBoard.BOARDIM);
 				int y=(int)(Math.random()*GameBoard.BOARDIM);
 				coord=new Coordinate(x,y);
-				moveMade=true;
+				if(madeMoves.contains(coord))continue;
+				else {
+					madeMoves.add(coord);
+					moveMade=true;
+				}
 			} catch (CoordinateOutOfBonds e) {}	
 		}
 		return coord;
 	}
 
-//	@Override
-//	public void addHitOnPlayer(Coordinate c) {
-//		// TODO Auto-generated method stub
-//
-//	}
+
 
 }

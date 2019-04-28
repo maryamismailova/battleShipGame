@@ -3,11 +3,17 @@ package versionGUI;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
+
 
 
 public class GameFrame {
@@ -18,7 +24,7 @@ public class GameFrame {
 	public void setGameMode() {
 		buttonList.setVisible(false);
 		GameBoard game = null;
-
+		frame.setLayout(new BorderLayout());
 		if(gameMode==0) {
 			//set Bot VS player game
 			System.out.println("Setting Player VS Bot game");
@@ -39,6 +45,17 @@ public class GameFrame {
 		}else if(gameMode==2) {
 			//set network game
 			System.out.println("Setting Network game ");
+			String msg="LAN mode is not available";
+            UIManager.put("OptionPane.minimumSize",new Dimension(200,100));
+            Object[] options= {"OK, exit", "New Game?"};
+            int result=JOptionPane.showOptionDialog(frame.getContentPane(), msg, "Unavailable", JOptionPane.YES_NO_OPTION, 
+            		JOptionPane.INFORMATION_MESSAGE, null, options, options[0] );
+            if(result==JOptionPane.OK_OPTION) {
+            	System.exit(0);                        	
+            }
+            else {
+            	GameFrame gf=new GameFrame();
+            }
 			//TODO
 		}
 		
@@ -54,7 +71,8 @@ public class GameFrame {
 			
 		buttonList = new JPanel();
 		buttonList.setPreferredSize(new Dimension(200,200));
-//		buttonList.setLayout(new BoxLayout(buttonList, BoxLayout.X_AXIS));
+		
+		Box modeButtons=Box.createVerticalBox();
 		
 		JButton playWBot=new JButton(" Player VS Bot ");
 		playWBot.setBackground(Color.BLUE);
@@ -68,7 +86,8 @@ public class GameFrame {
 			}
 			
 		});
-		buttonList.add(playWBot);
+//		buttonList.add(playWBot);
+		modeButtons.add(playWBot);
 		
 		JButton multiPlayerLocal=new JButton("Player1 VS Player2");
 		multiPlayerLocal.setBackground(Color.ORANGE);
@@ -82,7 +101,8 @@ public class GameFrame {
 			}
 			
 		});
-		buttonList.add(multiPlayerLocal);
+//		buttonList.add(multiPlayerLocal);
+		modeButtons.add(multiPlayerLocal);
 		
 		JButton networkPlayers=new JButton("Player in LAN");
 		networkPlayers.setBackground(Color.GREEN);
@@ -96,9 +116,12 @@ public class GameFrame {
 			}
 			
 		});
-		buttonList.add(networkPlayers);
-		
-		frame.add(buttonList, BorderLayout.CENTER);
+//		buttonList.add(networkPlayers);
+		modeButtons.add(networkPlayers);
+		buttonList.add(modeButtons);
+		frame.setLayout(new GridBagLayout());
+//		frame.add(buttonList, BorderLayout.CENTER);
+		frame.add(buttonList);
 		frame.setVisible(true);
 		
 		

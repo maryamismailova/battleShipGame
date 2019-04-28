@@ -19,6 +19,7 @@ import javax.swing.UIManager;
 public class PlayerGameModeGUI extends JPanel {
 	PlayerPanel playerPanel;
 	GridLayout gLayout=new GridLayout(2,1, 10, 100);
+	JLabel gameStat;
 	
 	GridBagLayout gbLayout=new GridBagLayout();
 	GridBagConstraints gbc = new GridBagConstraints();
@@ -54,20 +55,26 @@ public class PlayerGameModeGUI extends JPanel {
         gbc.gridx = 0;
         gbc.gridy = 0;
         this.add(gameBoard, gbc);
-
-		gbc.fill = GridBagConstraints.VERTICAL;
+        
+        gameStat=new JLabel("GameStatus:");
+        gbc.fill = GridBagConstraints.VERTICAL;
         gbc.gridx = 0;
         gbc.gridy = 1;
+        this.add(gameStat, gbc);
+        
+		gbc.fill = GridBagConstraints.VERTICAL;
+        gbc.gridx = 0;
+        gbc.gridy = 2;
         this.add(playerStrikeBoard, gbc);
         
         JLabel yourBoard=new JLabel("Your board status:");
         gbc.fill = GridBagConstraints.VERTICAL;
         gbc.gridx = 0;
-        gbc.gridy = 2;
+        gbc.gridy = 3;
         this.add(yourBoard, gbc);
         
         gbc.gridx = 0;
-        gbc.gridy = 3;
+        gbc.gridy = 4;
         gbc.fill = GridBagConstraints.VERTICAL;
         this.add(playerShipsBoard, gbc);
 
@@ -212,6 +219,7 @@ public class PlayerGameModeGUI extends JPanel {
 			int nextPlayer=1-game.currentPlayer;
 			
 			if(game.checkIfHit(strikeCoord)) {
+				gameStat.setText("Game Status: at "+strikeCoord+" hit!");
 				System.out.println();
 				System.out.println("Player: "+game.players[game.currentPlayer].name+" hit!");
                 
@@ -221,6 +229,7 @@ public class PlayerGameModeGUI extends JPanel {
                 boardCells[strikeY][strikeX].wasHit=true;
                 
                 if(game.checkIfKill(strikeCoord)==true) {
+                	gameStat.setText("Game Status: at "+strikeCoord+" kill!");
                     System.out.println("Player "+game.players[game.currentPlayer].name+" kills");
                     if(game.checkIfWin()==true) {
                         System.out.println("Player "+playerPanel.player.name+" wins");
@@ -248,7 +257,8 @@ public class PlayerGameModeGUI extends JPanel {
 			}else {
 				//close this player, give the turn to the opponent
                 System.out.println("No hit!");
-				
+                gameStat.setText("Game Status: at "+strikeCoord+" no hit!");
+                
                 if(playerPanel.gameBoard.mode==0) {
 					boardCells[strikeY][strikeX].setBackground(boardCells[strikeY][strikeX].striked);
 					boardCells[strikeY][strikeX].wasStriked=true;
@@ -259,6 +269,12 @@ public class PlayerGameModeGUI extends JPanel {
 					boardCells[strikeY][strikeX].setBackground(boardCells[strikeY][strikeX].striked);
 					boardCells[strikeY][strikeX].wasStriked=true;
 					
+					try {
+						Thread.sleep(100);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					playerPanel.card.next(playerPanel);
 					playerPanel.waitPanel.startButton.setVisible(false);
 					
