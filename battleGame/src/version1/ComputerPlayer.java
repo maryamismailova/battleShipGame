@@ -5,14 +5,12 @@ import java.util.Scanner;
 public class ComputerPlayer extends Player {
 
 	public ComputerPlayer(String name) {
-		// TODO Auto-generated constructor stub
 		this.name=name;
 		ships=new Ship[5]; 
 	}
 
 	@Override
 	public void initializeBoard() {
-		// TODO Auto-generated method stub
 		for(int i=0;i<5;i++) {
 			//get Boat coordinates
 			int curLength=i+1;
@@ -41,19 +39,16 @@ public class ComputerPlayer extends Player {
 				}
 				ships[i]=addAShip(newBoatCoord, i);
 			} catch (CoordinateOutOfBonds | UnavailableShipException e) {
-//				e.printStackTrace();
-//				System.out.println("try once more: "+e.getMessage());
 				i--;
 				continue;
 			}
 			
-			System.out.println("Boat coord: "+ships[i]);
+//			System.out.println("Boat coord: "+ships[i]);
 		}
 	}
 
 	@Override
 	public Coordinate makeMove() {
-		System.out.println("Player "+this.name+" makes a move: ");
 		boolean moveMade=false;
 		Coordinate coord=null;
 		while(!moveMade) {
@@ -64,13 +59,9 @@ public class ComputerPlayer extends Player {
 				moveMade=true;
 			} catch (CoordinateOutOfBonds e) {}	
 		}
+		System.out.println("Player "+this.name+" makes a move: "+coord);
 		return coord;
 	}
 
-//	@Override
-//	public void addHitOnPlayer(Coordinate c) {
-//		// TODO Auto-generated method stub
-//
-//	}
 
 }

@@ -3,9 +3,6 @@ package version1;
 import java.util.Scanner;
 
 public abstract class Player{
-//	char board[][];
-//	char opponentBoard[][];
-//	int nbOfHits;
 	Ship[] ships;
 	String name;
 	public abstract void initializeBoard();
@@ -40,9 +37,6 @@ public abstract class Player{
 				}
 			}
 		}
-//		System.out.println("I am here");
-		
-		//if everything is okay, create a new ship and return it
 		return new Ship(coordinates);
 	}
 	
@@ -71,9 +65,6 @@ public abstract class Player{
 				}
 			}
 		}
-//		System.out.println("I am here");
-		
-		//if everything is okay, create a new ship and return it
 		return new Ship(coordinates);
 	}
 	
@@ -92,20 +83,9 @@ public abstract class Player{
 		}
 		
 	}
-/*	public void initializeBoard(String boardCoordinates) {
-		String[] points=boardCoordinates.split(" ");
-		for(int i=0;i<5;i++) {
-			Coordinate[] coordinates=new Coordinate[points.length];
-			for(int j=0;j<coordinates.length;j++) {
-				coordinates[j]=new Coordinate(points[j]);
-			}
-			ships[i]=new Ship(coordinates);
-			System.out.println("Boat coord: "+ships[i]);
-		}
-	}*/
 	
 	public abstract Coordinate makeMove();
-//	public void addHitOnPlayer(Coordinate c);
+
 	public void addHitOnPlayer(Coordinate c) {
 		for(int i=0;i<ships.length;i++) {
 			if(ships[i].contains(c)==true) {

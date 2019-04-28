@@ -16,6 +16,7 @@ public class Coordinate {
 	}
 	
 	public Coordinate(String coord) throws CoordinateOutOfBonds{
+		if(coord.length()<2)throw new CoordinateOutOfBonds("Inappropriate coordinate!");
 		this.x=((int)coord.charAt(0))-((int)'A');
 		this.y=Character.getNumericValue(coord.charAt(1));
 		if(x>=10 || x<0) {
