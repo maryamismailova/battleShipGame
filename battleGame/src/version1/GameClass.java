@@ -1,33 +1,31 @@
 package version1;
 
+import java.util.Scanner;
+
 public class GameClass {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		System.out.println("Choose game mode:\n 1 - Player VS Computer\n 2 - Player1 VS Player2\n");
+		Scanner input=new Scanner(System.in);
 		Player[] players=new Player[2];
-		players[0]=new ComputerPlayer("Computer");
-		players[1]=new ClientPlayer("Client");
-		
-		GameBoard game=new GameBoard(players);
-		game.printBoard(game.players[0]);
-		game.printBoard(game.players[1]);
-		game.startGame();
-		
-		
-/*		Player p1=new ComputerPlayer("p1");
-		p1.initializeBoard();
-		GameBoard.printBoard(p1);
-		for(int i=0;i<10;i++) {
-			System.out.println("Make move: "+p1.makeMove());
-		}
-*/
+		int mode=input.nextInt();
+		if(mode==1) {
+			players[1]=new ComputerPlayer("Computer");
+			players[0]=new ClientPlayer("Client");
 
-//		
-//		System.out.println("evvdv");
-//		Coordinate c=new Coordinate("B2");
-//		System.out.println("c.x="+c.x+" c.y="+c.y);
-//		String s=Coordinate.coordinateToString(c);
-//		System.out.println("Coord: "+s);
+			GameBoard game=new GameBoard(players);
+			game.startGame();
+		}else if(mode ==2 ) {
+			players[0]=new ComputerPlayer("Computer");
+			players[1]=new ClientPlayer("Client");			
+		
+			GameBoard game=new GameBoard(players);
+			game.startGame();
+		}else {
+			System.out.println("Incorrect input!");
+		}
+
+		
 	}
 
 }

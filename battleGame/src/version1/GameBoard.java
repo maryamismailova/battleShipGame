@@ -1,5 +1,7 @@
 package version1;
 
+import java.util.Scanner;
+
 public class GameBoard {
 	final static int BOARDIM=10;
 	Player[] players;
@@ -44,37 +46,39 @@ public class GameBoard {
 	
 	public final static void clearConsole()//DOESN'T WORK !
 	{
-	    try
-	    {
-	        final String os = System.getProperty("os.name");
-
-	        if (os.contains("Windows"))
-	        {
-	            Runtime.getRuntime().exec("cls");
-	        }
-	        else if(os.contains("Linux"))
-	        {
-	            Runtime.getRuntime().exec("clear");
-	        }else {
-	        	for(int i=0;i<50;i++)System.out.println("\r\n");
-	        }
-//	        System.out.println("Next player!\n");
-	    }
-	    catch (final Exception e)
-	    {
-	        //  Handle any exceptions.
-	    }
+		
+		 System.out.print("\033c");
+		 System.out.flush();
+//	    try
+//	    {
+//	        final String os = System.getProperty("os.name");
+//
+//	        if (os.contains("Windows"))
+//	        {
+//	            Runtime.getRuntime().exec("cls");
+//	        }
+//	        else if(os.contains("Linux"))
+//	        {
+//	            Runtime.getRuntime().exec("clear");
+//	        }else {
+//	        	for(int i=0;i<50;i++)System.out.println("\r\n");
+//	        }
+////	        System.out.println("Next player!\n");
+//	    }
+//	    catch (final Exception e)
+//	    {
+//	        //  Handle any exceptions.
+//	    }
 	}
 
 	
-	public void printHitsBoard(Player p) {
-		System.out.println("Player's game board!");
+	public void printHitsBoard(Player p, String message) {
+		System.out.println(message);
 		char board[][]=new char[10][10];
 		for(int i=0;i<10;i++) {
 			for(int j=0;j<10;j++) {
 				board[i][j]=' ';
 			}
-//			System.out.println();
 		}
 		for(int i=0;i<p.ships.length;i++) {
 			for(int j=0;j<p.ships[i].coord.length;j++) {
@@ -84,22 +88,28 @@ public class GameBoard {
 			}
 		}
 		String boardString="";
-		String floor="----------------------------------------------\n";
+		String floor="-------------------------------------------------\n";
 		boardString+=floor;
-		for(int i=0;i<10;i++) {
+		for(int i=0;i<11;i++) {
 			boardString+="| ";
-			for(int j=0;j<10;j++) {
-				boardString+=board[i][j]+" | ";
+			for(int j=0;j<11;j++) {
+				if(i==0 && j>=1) boardString+=Character.toString((char)('A'+j-1))+" | ";
+				else if(j==0 && i>=1)boardString+=Integer.toString(i-1)+" | ";
+				else if(i>0 && j>0)boardString+=board[i-1][j-1]+" | ";
+				else boardString+="  | ";
+//				boardString+=board[i][j]+" | ";
 			}
 			
 			boardString+="\n"+floor;
 		}
 		System.out.println(boardString);
+		
+		System.out.println("\n");
 	}
 	
 	
 	public static void printBoard(Player p) {
-		System.out.println("Player: "+p.name);
+		System.out.println("Player "+p.name+"'s board (+ for ships, - for hit ships):");
 		char board[][]=new char[10][10];
 		for(int i=0;i<10;i++) {
 			for(int j=0;j<10;j++) {
@@ -116,17 +126,78 @@ public class GameBoard {
 			}
 		}
 		String boardString="";
-		String floor="----------------------------------------------\n";
+		String floor="-------------------------------------------------\n";
 		boardString+=floor;
-		for(int i=0;i<10;i++) {
+		for(int i=0;i<11;i++) {
 			boardString+="| ";
-			for(int j=0;j<10;j++) {
-				boardString+=board[i][j]+" | ";
+			for(int j=0;j<11;j++) {
+				if(i==0 && j>=1) boardString+=Character.toString((char)('A'+j-1))+" | ";
+				else if(j==0 && i>=1)boardString+=Integer.toString(i-1)+" | ";
+				else if(i>0 && j>0)boardString+=board[i-1][j-1]+" | ";
+				else boardString+="  | ";
+//				boardString+=board[i][j]+" | ";
 			}
-			
 			boardString+="\n"+floor;
 		}
 		System.out.println(boardString);
+		System.out.println("\n");
+	}
+	
+	public void printGameBoardsStatus(Player opponent, Player current) {
+//		System.out.println(message);
+		char opBoard[][]=new char[10][10];
+		for(int i=0;i<10;i++) {
+			for(int j=0;j<10;j++) {
+				opBoard[i][j]=' ';
+			}
+		}
+		for(int i=0;i<opponent.ships.length;i++) {
+			for(int j=0;j<opponent.ships[i].coord.length;j++) {
+				int x=opponent.ships[i].coord[j].x;
+				int y=opponent.ships[i].coord[j].y;
+				if(opponent.ships[i].containsHit(opponent.ships[i].coord[j])==true) opBoard[y][x]='x';
+			}
+		}
+		
+		char board[][]=new char[10][10];
+		for(int i=0;i<10;i++) {
+			for(int j=0;j<10;j++) {
+				board[i][j]=' ';
+			}
+//			System.out.println();
+		}
+		for(int i=0;i<current.ships.length;i++) {
+			for(int j=0;j<current.ships[i].coord.length;j++) {
+				int x=current.ships[i].coord[j].x;
+				int y=current.ships[i].coord[j].y;
+				if(current.ships[i].containsHit(current.ships[i].coord[j])==true) board[y][x]='-';
+				else board[y][x]='+';
+			}
+		}
+		String boardString="Opponent's board status \t\t\t\t Your Board Status\n";
+		String floor="---------------------------------------------\t\t---------------------------------------------\n";
+		boardString+=floor;
+		for(int i=0;i<11;i++) {
+			boardString+="| ";
+			for(int j=0;j<11;j++) {
+				if(i==0 && j>=1) boardString+=Character.toString((char)('A'+j-1))+" | ";
+				else if(j==0 && i>=1)boardString+=Integer.toString(i-1)+" | ";
+				else if (i>0 && j>0)boardString+=opBoard[i-1][j-1]+" | ";
+				else boardString+="  | ";
+			}
+			boardString+="\t\t| ";
+			for(int j=0;j<11;j++) {
+				if(i==0 && j>=1) boardString+=Character.toString((char)('A'+j-1))+" | ";
+				else if(j==0 && i>=1)boardString+=Integer.toString(i-1)+" | ";
+				else if(i>0 && j>0)boardString+=board[i-1][j-1]+" | ";
+				else boardString+="  | ";
+//				boardString+=board[i][j]+" | ";
+			}
+			boardString+="\n"+floor;
+		}
+		System.out.println(boardString);
+		
+		System.out.println("\n");		
 	}
 	
 	public GameBoard() {
@@ -136,6 +207,7 @@ public class GameBoard {
         players[0].initializeBoard();
         players[1].initializeBoard();
 	}
+	
 	public GameBoard(Player [] players) {
 		this.players=players;
         players[0].initializeBoard();
@@ -145,37 +217,41 @@ public class GameBoard {
 	 public void startGame() {
 	        currentPlayer = 0;
 	        while(gameWon==false ) {
-	        	int nextPlayer;
-	        	if(currentPlayer==0)nextPlayer=1;
-	        	else nextPlayer=0;
-	        	
-	        	printHitsBoard(players[nextPlayer]);
-	            Coordinate playerMove=null;
+	        	int nextPlayer=1-currentPlayer;
+	        	printGameBoardsStatus(players[nextPlayer], players[currentPlayer]);
+	        	Coordinate playerMove=null;
 	            while(playerMove==null)playerMove=players[currentPlayer].makeMove();
             	
 	            System.out.println("Player : "+players[currentPlayer].name+" move: "+Coordinate.coordinateToString(playerMove));
 	            
 	            while(checkIfHit(playerMove)==true /*&& gameWon==false*/) {
-	            	System.out.println("Player: "+players[currentPlayer].name+" hit!");
+	            	System.out.println("\nPlayer: "+players[currentPlayer].name+" hit!");
 	                players[nextPlayer].addHitOnPlayer(playerMove);
 	                if(checkIfKill(playerMove)==true) {
 	                    System.out.println("Player "+players[currentPlayer].name+" kills");
 	                    if(checkIfWin()==true) {
-	                        System.out.println("Player "+players[currentPlayer].name+" wins");
+	                    	System.out.println("\n\nCongratulations!!!");
+	                        System.out.println("Player "+players[currentPlayer].name+" wins!");
+	                        System.out.println("Sorry, player "+players[nextPlayer]+" :(");
 	                        gameWon=true;
 	                        break;
 	                    }
 	                }
-	                printHitsBoard(players[nextPlayer]);
+	                printHitsBoard(players[nextPlayer], "Opponent's board status");
 	                playerMove=null;
 	                while(playerMove==null)playerMove=players[currentPlayer].makeMove();	                
 	            }
-	            clearConsole();
-	            currentPlayer=nextPlayer;
 	            if(gameWon==false) {
-		            System.out.println("Player: "+players[currentPlayer].name+" no hit!");
+		            System.out.println("Player: "+players[currentPlayer].name+" no hit!! :(");
+		            if(players[currentPlayer] instanceof ClientPlayer) {
+		            	System.out.println("Press any key to continue: ");
+		            	Scanner in=new Scanner(System.in);
+		            	in.nextLine();		            	
+		            }
 		            System.out.println("Next Player!");
 	            }
+	            clearConsole();
+	            currentPlayer=nextPlayer;
 	        }
 	 }
 }

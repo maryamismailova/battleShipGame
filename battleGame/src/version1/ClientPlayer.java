@@ -6,7 +6,7 @@ public class ClientPlayer extends Player {
 
 	@Override
 	public void initializeBoard() {
-		System.out.println("Player "+this.name+" enter boat coordinates\n");
+		System.out.println("Player "+this.name+" enter boat coordinates:\n");
 		for(int i=0;i<5;i++) {
 			//get Boat coordinates
 			System.out.println("Boat "+i);
@@ -15,7 +15,6 @@ public class ClientPlayer extends Player {
 			try {
 				ships[i]=addAShip(pointString, i);
 			} catch (CoordinateOutOfBonds | UnavailableShipException e) {
-//				e.printStackTrace();
 				System.out.println("try once more: "+e.getMessage());
 				i--;
 				continue;
@@ -29,19 +28,10 @@ public class ClientPlayer extends Player {
 		this.name=name;
 		ships=new Ship[5]; 
 	}
-	
-//	public void addHitOnPlayer(Coordinate c) {
-//		for(int i=0;i<ships.length;i++) {
-//			if(ships[i].contains(c)==true) {
-//				ships[i].addHit(c);
-//				break;
-//			}
-//		}
-//	}
-//	
+
 	@Override
 	public Coordinate makeMove(){
-		System.out.println("Player "+this.name+" make a move: ");
+		System.out.println("Player "+this.name+" makes a move: ");
 		Scanner in=new Scanner(System.in);
 		Coordinate coord;
 		try {
