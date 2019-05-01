@@ -8,7 +8,7 @@ public class Coordinate {
 		this.x = x;
 		this.y = y;
 	}
-	
+
 	public Coordinate(String coord) {
 		this.x=((int)coord.charAt(0))-((int)'A');
 		this.y=Character.getNumericValue(coord.charAt(1));
@@ -20,8 +20,8 @@ public class Coordinate {
 	public static String coordinateToString(Coordinate c) {
 		String s="";
 		s+=(char)((int)'A'+c.x);
-		s+=String.valueOf(c.y);
-		System.out.println("Coordinate: "+s);
+		s+=c.y;
+//		System.out.println("Coordinate: "+s);
 		return s;
 	}
 }
