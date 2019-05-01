@@ -29,6 +29,8 @@ To run the project see in releases section v1.2 and v2 for two versions of the g
 - [x] Console Version (2 Players, Bot player)
 - [x] Swing GUI Version (2 Players, Bot Player)
 - [ ] LAN Version (To be developed)
+
+
  ![Console game interface](img/consoleInterface.jpg)
  ![GUI version interface](img/gameHit.jpg)
 
