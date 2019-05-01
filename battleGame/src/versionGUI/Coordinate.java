@@ -1,4 +1,4 @@
-package battleGame.src.versionGUI;
+package versionGUI;
 
 public class Coordinate {
 	int x, y;

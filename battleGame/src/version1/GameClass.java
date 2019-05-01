@@ -1,4 +1,4 @@
-package battleGame.src.version1;
+package version1;
 
 import java.util.Scanner;
 
