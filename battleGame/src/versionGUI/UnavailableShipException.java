@@ -1,4 +1,11 @@
-package versionGUI;
+package battleGame.src.versionGUI;
+
+/**
+ * Exception class for ships.
+ * Used when user wants the cell which is not empty.
+ * or when the ship of the given size already exists.
+ */
+
 public class UnavailableShipException extends Exception {
 	String msg;
 	public UnavailableShipException(String msg) {

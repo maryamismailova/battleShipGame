@@ -1,4 +1,4 @@
-package versionGUI;
+package battleGame.src.versionGUI;
 
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -12,6 +12,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+/**
+ * Class to set player's panel.
+ */
 public class PlayerPanel extends JPanel {
 	public  CardLayout card = new CardLayout();
     public Container c;
@@ -21,9 +24,15 @@ public class PlayerPanel extends JPanel {
     BoardGUI gameBoard;
     JWaitPanel waitPanel;
     
+    /*!
+     * Nested class. Used to create the button which will allow one of the players to set his turn
+     */
     public class JWaitPanel extends JPanel{
     	JButton startButton;
     	
+    	/*!
+    	 * Constructor
+    	 */
     	public JWaitPanel() {
     		super();
     		this.setBackground(Color.GREEN);
@@ -49,6 +58,9 @@ public class PlayerPanel extends JPanel {
     	
     }
     
+    /*!
+     * Constructor
+     */
     public PlayerPanel(BoardGUI gameBoard, Player p) {
 		super();
 		c=this;

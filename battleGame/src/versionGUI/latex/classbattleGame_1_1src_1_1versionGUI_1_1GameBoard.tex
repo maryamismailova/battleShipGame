@@ -1,0 +1,121 @@
+\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard}{}\section{battle\+Game.\+src.\+version\+G\+U\+I.\+Game\+Board Class Reference}
+\label{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard}\index{battle\+Game.\+src.\+version\+G\+U\+I.\+Game\+Board@{battle\+Game.\+src.\+version\+G\+U\+I.\+Game\+Board}}
+
+
+Collaboration diagram for battle\+Game.\+src.\+version\+G\+U\+I.\+Game\+Board\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a0f1b7bd1c6e3eb605b7a2526b6b5fd3d}{check\+If\+Hit} (\hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Coordinate}{Coordinate} move)
+\item 
+boolean \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a2e885cf7d91e7b04d7c6f5846f547ec2}{check\+If\+Kill} (\hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Coordinate}{Coordinate} move)
+\item 
+boolean \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a613bc7dcb8f41d7a6568f8eb63ae9399}{check\+If\+Win} ()
+\item 
+void \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_ae6b4662d285099b485d76e2757e335f7}{print\+Hits\+Board} (\hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Player}{Player} p)
+\item 
+\hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_ad3750e93f42feb60faa8028d7726d52b}{Game\+Board} ()
+\begin{DoxyCompactList}\small\item\em Initialize the players and their boards. \end{DoxyCompactList}\item 
+\hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a78a619348217b40a5445c3f00351503c}{Game\+Board} (\hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Player}{Player}\mbox{[}$\,$\mbox{]} players)
+\begin{DoxyCompactList}\small\item\em Initialize players\textquotesingle{} boards. \end{DoxyCompactList}\item 
+void \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a451a1d2ab7c1f2216211239f28827f11}{start\+Game} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static final void \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a4c26c52ed63315dc68ed355f9c045b1f}{clear\+Console} ()
+\item 
+static void \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a43bd2f683c9b5c32e4ff33c13bcc8d74}{print\+Board} (\hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Player}{Player} p)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final static int {\bfseries B\+O\+A\+R\+D\+IM} =10\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_aaaf66aefde24a89b8fd5e6888e405f80}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_aaaf66aefde24a89b8fd5e6888e405f80}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the board of players. Class to check if player hit, kill the ships and win the game. Class which have the method starting the game. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}!Game\+Board@{Game\+Board}}
+\index{Game\+Board@{Game\+Board}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}}
+\subsubsection[{\texorpdfstring{Game\+Board()}{GameBoard()}}]{\setlength{\rightskip}{0pt plus 5cm}battle\+Game.\+src.\+version\+G\+U\+I.\+Game\+Board.\+Game\+Board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_ad3750e93f42feb60faa8028d7726d52b}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_ad3750e93f42feb60faa8028d7726d52b}
+
+
+Initialize the players and their boards. 
+
+Constructor. \index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}!Game\+Board@{Game\+Board}}
+\index{Game\+Board@{Game\+Board}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}}
+\subsubsection[{\texorpdfstring{Game\+Board(\+Player[] players)}{GameBoard(Player[] players)}}]{\setlength{\rightskip}{0pt plus 5cm}battle\+Game.\+src.\+version\+G\+U\+I.\+Game\+Board.\+Game\+Board (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}\mbox{[}$\,$\mbox{]}}]{players}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a78a619348217b40a5445c3f00351503c}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a78a619348217b40a5445c3f00351503c}
+
+
+Initialize players\textquotesingle{} boards. 
+
+Constructor. 
+
+\subsection{Member Function Documentation}
+\index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}!check\+If\+Hit@{check\+If\+Hit}}
+\index{check\+If\+Hit@{check\+If\+Hit}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}}
+\subsubsection[{\texorpdfstring{check\+If\+Hit(\+Coordinate move)}{checkIfHit(Coordinate move)}}]{\setlength{\rightskip}{0pt plus 5cm}boolean battle\+Game.\+src.\+version\+G\+U\+I.\+Game\+Board.\+check\+If\+Hit (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordinate}}]{move}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a0f1b7bd1c6e3eb605b7a2526b6b5fd3d}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a0f1b7bd1c6e3eb605b7a2526b6b5fd3d}
+Check if hit \index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}!check\+If\+Kill@{check\+If\+Kill}}
+\index{check\+If\+Kill@{check\+If\+Kill}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}}
+\subsubsection[{\texorpdfstring{check\+If\+Kill(\+Coordinate move)}{checkIfKill(Coordinate move)}}]{\setlength{\rightskip}{0pt plus 5cm}boolean battle\+Game.\+src.\+version\+G\+U\+I.\+Game\+Board.\+check\+If\+Kill (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordinate}}]{move}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a2e885cf7d91e7b04d7c6f5846f547ec2}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a2e885cf7d91e7b04d7c6f5846f547ec2}
+Check if kill the ship \index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}!check\+If\+Win@{check\+If\+Win}}
+\index{check\+If\+Win@{check\+If\+Win}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}}
+\subsubsection[{\texorpdfstring{check\+If\+Win()}{checkIfWin()}}]{\setlength{\rightskip}{0pt plus 5cm}boolean battle\+Game.\+src.\+version\+G\+U\+I.\+Game\+Board.\+check\+If\+Win (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a613bc7dcb8f41d7a6568f8eb63ae9399}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a613bc7dcb8f41d7a6568f8eb63ae9399}
+Check if win the game \index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}!clear\+Console@{clear\+Console}}
+\index{clear\+Console@{clear\+Console}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}}
+\subsubsection[{\texorpdfstring{clear\+Console()}{clearConsole()}}]{\setlength{\rightskip}{0pt plus 5cm}static final void battle\+Game.\+src.\+version\+G\+U\+I.\+Game\+Board.\+clear\+Console (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a4c26c52ed63315dc68ed355f9c045b1f}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a4c26c52ed63315dc68ed355f9c045b1f}
+Clear the console. \index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}!print\+Board@{print\+Board}}
+\index{print\+Board@{print\+Board}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}}
+\subsubsection[{\texorpdfstring{print\+Board(\+Player p)}{printBoard(Player p)}}]{\setlength{\rightskip}{0pt plus 5cm}static void battle\+Game.\+src.\+version\+G\+U\+I.\+Game\+Board.\+print\+Board (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a43bd2f683c9b5c32e4ff33c13bcc8d74}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a43bd2f683c9b5c32e4ff33c13bcc8d74}
+Prints the player\textquotesingle{}s board. \index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}!print\+Hits\+Board@{print\+Hits\+Board}}
+\index{print\+Hits\+Board@{print\+Hits\+Board}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}}
+\subsubsection[{\texorpdfstring{print\+Hits\+Board(\+Player p)}{printHitsBoard(Player p)}}]{\setlength{\rightskip}{0pt plus 5cm}void battle\+Game.\+src.\+version\+G\+U\+I.\+Game\+Board.\+print\+Hits\+Board (
+\begin{DoxyParamCaption}
+\item[{{\bf Player}}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_ae6b4662d285099b485d76e2757e335f7}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_ae6b4662d285099b485d76e2757e335f7}
+Prints the board with the player\textquotesingle{}s hits. \index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}!start\+Game@{start\+Game}}
+\index{start\+Game@{start\+Game}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Game\+Board}}
+\subsubsection[{\texorpdfstring{start\+Game()}{startGame()}}]{\setlength{\rightskip}{0pt plus 5cm}void battle\+Game.\+src.\+version\+G\+U\+I.\+Game\+Board.\+start\+Game (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a451a1d2ab7c1f2216211239f28827f11}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard_a451a1d2ab7c1f2216211239f28827f11}
+Method that begins the game between players. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Board.\+java\end{DoxyCompactItemize}

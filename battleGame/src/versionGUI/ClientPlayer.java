@@ -1,10 +1,21 @@
-package versionGUI;
+package battleGame.src.versionGUI;
 
 import java.util.Scanner;
+
+/**
+ * Class for player if player-player mode is chosen.
+ * Extends \a Player abstract class
+*/
 
 public class ClientPlayer extends Player {
 
 	@Override
+	/*!
+	 * Read from player the coordinates of the ship and add them as one ship if everything is okay.
+	 * Can read 5 coordinates maximum in one line.
+	 * The coordinates should be separated.
+	 * For example, the input looks like: A1 A2 
+	*/
 	public void initializeBoard() {
 		System.out.println("Player "+this.name+" enter boat coordinates\n");
 		for(int i=0;i<5;i++) {
@@ -25,6 +36,9 @@ public class ClientPlayer extends Player {
 		}
 	}
 	
+	/*! Constructor
+	 \param name - the name of player 
+	 */
 	public ClientPlayer(String name) {
 		this.name=name;
 		ships=new Ship[5]; 
@@ -40,6 +54,9 @@ public class ClientPlayer extends Player {
 //	}
 //	
 	@Override
+	/*!
+	 * Read from player the coordinate
+	*/
 	public Coordinate makeMove(){
 		System.out.println("Player "+this.name+" make a move: ");
 		Scanner in=new Scanner(System.in);

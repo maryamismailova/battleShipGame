@@ -1,8 +1,11 @@
-package versionGUI;
+package battleGame.src.versionGUI;
 
 public class Coordinate {
 	int x, y;
 
+	/*!
+	 * Constructor 
+	 */
 	public Coordinate(int x, int y)  throws CoordinateOutOfBonds {
 		super();
 		this.x = x;
@@ -15,6 +18,9 @@ public class Coordinate {
 		}
 	}
 	
+	/*!
+	 * Constructor 
+	 */
 	public Coordinate(String coord) throws CoordinateOutOfBonds{
 		this.x=((int)coord.charAt(0))-((int)'A');
 		this.y=Character.getNumericValue(coord.charAt(1));
@@ -26,11 +32,17 @@ public class Coordinate {
 		}
 	}
 	
+	/*!
+	 * Convert coordinate of \a String type into integers. 
+	 */
 	public static Coordinate stringToCoordinate(String coord) throws CoordinateOutOfBonds{
 		Coordinate c=new Coordinate(coord);
 		return c;
 	}
 	
+	/*!
+	 * Sorts the coordinate array. 
+	 */	
 	public static  void sortCoordinates(Coordinate[] unsorted) throws UnavailableShipException{
 		if(unsorted.length!=1) {
 			int direction=-1;//0 - vertical, 1 - horizontal
@@ -83,6 +95,9 @@ public class Coordinate {
 //		return unsorted;
 	}
 	
+	/*!
+	 * Convert coordinate into \a String.
+	 */
 	public static String coordinateToString(Coordinate c) {
 		String s="";
 		s+=(char)((int)'A'+c.x);
@@ -98,6 +113,10 @@ public class Coordinate {
 		return s;
 	}
 	
+	/*!
+	 * Checks if given coordinate is equal to the containing coordinate
+	 * @param c - coordinate to check 
+	 */
 	public boolean equals(Coordinate c) {
 		if(c.x ==this.x && c.y==this.y) return true;
 		return false;

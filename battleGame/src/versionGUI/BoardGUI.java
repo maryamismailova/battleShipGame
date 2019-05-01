@@ -1,4 +1,4 @@
-package versionGUI;
+package battleGame.src.versionGUI;
 
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -6,6 +6,10 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
+/**
+ * GUI version of board for players. 
+ */
 
 public class BoardGUI extends JPanel{
 	PlayerPanel [] player;//=new PlayerPanel[2];
@@ -15,7 +19,11 @@ public class BoardGUI extends JPanel{
 	boolean gameModeOn=false;
 	int mode;
 	
-	public BoardGUI(GameBoard board, int mode) {
+	/*!
+	 * Depending on the mode of the game, sets up the player's GUI.
+	 * @param mode - mode of the game
+	 */
+	public BoardGUI(GameBoard board, int mode) { //!< Constructor
 		super();
 		this.game=board;
 		this.mode=mode;
@@ -42,6 +50,9 @@ public class BoardGUI extends JPanel{
 		nextPlayer();
 	}
 	
+	/*!
+	 * Sets up the game mode
+	 */
 	public void setupGameMode() {
 		if(mode==0) {
 			player[0].gameMode=new PlayerGameModeGUI(player[0]);
@@ -72,6 +83,9 @@ public class BoardGUI extends JPanel{
 		}
 	}
 	
+	/*!
+	 * After the current player does his work, this method switches to the next player.
+	 */
 	public void nextPlayer() {	
 		int currentPlayer=game.currentPlayer;
 		int nextPlayer=1-currentPlayer;

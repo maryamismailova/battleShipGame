@@ -1,0 +1,60 @@
+\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1BoardGUI}{}\section{battle\+Game.\+src.\+version\+G\+U\+I.\+Board\+G\+UI Class Reference}
+\label{classbattleGame_1_1src_1_1versionGUI_1_1BoardGUI}\index{battle\+Game.\+src.\+version\+G\+U\+I.\+Board\+G\+UI@{battle\+Game.\+src.\+version\+G\+U\+I.\+Board\+G\+UI}}
+
+
+Inheritance diagram for battle\+Game.\+src.\+version\+G\+U\+I.\+Board\+G\+UI\+:
+% FIG 0
+
+
+Collaboration diagram for battle\+Game.\+src.\+version\+G\+U\+I.\+Board\+G\+UI\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1BoardGUI_af5e1fd30c589d7b8163f3c3fe612e2b3}{Board\+G\+UI} (\hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1GameBoard}{Game\+Board} board, int mode)
+\item 
+void \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1BoardGUI_a8bc48d304827a4b3d30f29e4cfec8a5c}{setup\+Game\+Mode} ()
+\item 
+void \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1BoardGUI_ade2374ee530aaef7cdf5168084751f1e}{next\+Player} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+G\+UI version of board for players. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Board\+G\+UI@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Board\+G\+UI}!Board\+G\+UI@{Board\+G\+UI}}
+\index{Board\+G\+UI@{Board\+G\+UI}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Board\+G\+UI@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Board\+G\+UI}}
+\subsubsection[{\texorpdfstring{Board\+G\+U\+I(\+Game\+Board board, int mode)}{BoardGUI(GameBoard board, int mode)}}]{\setlength{\rightskip}{0pt plus 5cm}battle\+Game.\+src.\+version\+G\+U\+I.\+Board\+G\+U\+I.\+Board\+G\+UI (
+\begin{DoxyParamCaption}
+\item[{{\bf Game\+Board}}]{board, }
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1BoardGUI_af5e1fd30c589d7b8163f3c3fe612e2b3}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1BoardGUI_af5e1fd30c589d7b8163f3c3fe612e2b3}
+Depending on the mode of the game, sets up the player\textquotesingle{}s G\+UI. 
+\begin{DoxyParams}{Parameters}
+{\em mode} & -\/ mode of the game \\
+\hline
+\end{DoxyParams}
+$<$ Constructor 
+
+\subsection{Member Function Documentation}
+\index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Board\+G\+UI@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Board\+G\+UI}!next\+Player@{next\+Player}}
+\index{next\+Player@{next\+Player}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Board\+G\+UI@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Board\+G\+UI}}
+\subsubsection[{\texorpdfstring{next\+Player()}{nextPlayer()}}]{\setlength{\rightskip}{0pt plus 5cm}void battle\+Game.\+src.\+version\+G\+U\+I.\+Board\+G\+U\+I.\+next\+Player (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1BoardGUI_ade2374ee530aaef7cdf5168084751f1e}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1BoardGUI_ade2374ee530aaef7cdf5168084751f1e}
+After the current player does his work, this method switches to the next player. \index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Board\+G\+UI@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Board\+G\+UI}!setup\+Game\+Mode@{setup\+Game\+Mode}}
+\index{setup\+Game\+Mode@{setup\+Game\+Mode}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Board\+G\+UI@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Board\+G\+UI}}
+\subsubsection[{\texorpdfstring{setup\+Game\+Mode()}{setupGameMode()}}]{\setlength{\rightskip}{0pt plus 5cm}void battle\+Game.\+src.\+version\+G\+U\+I.\+Board\+G\+U\+I.\+setup\+Game\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1BoardGUI_a8bc48d304827a4b3d30f29e4cfec8a5c}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1BoardGUI_a8bc48d304827a4b3d30f29e4cfec8a5c}
+Sets up the game mode 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Board\+G\+U\+I.\+java\end{DoxyCompactItemize}

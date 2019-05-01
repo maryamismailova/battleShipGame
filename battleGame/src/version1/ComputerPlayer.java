@@ -1,15 +1,26 @@
-package version1;
+package battleGame.src.version1;
 
 import java.util.Scanner;
 
+/**
+ * Class for computer if computer-client mode is chosen.
+ * Extends \a Player abstract class
+*/
+
 public class ComputerPlayer extends Player {
 
+	/*! Constructor
+	 \param name - name of player 
+	 */
 	public ComputerPlayer(String name) {
 		this.name=name;
 		ships=new Ship[5]; 
 	}
 
 	@Override
+	/*! Initialize the board of computer.
+	 * The computer sets the coordinates randomly but taking into account the direction and position of coordinates.
+	*/
 	public void initializeBoard() {
 		for(int i=0;i<5;i++) {
 			//get Boat coordinates
@@ -48,6 +59,9 @@ public class ComputerPlayer extends Player {
 	}
 
 	@Override
+	/*!
+	 * Make move by randomly choosing the coordinate.
+	 */
 	public Coordinate makeMove() {
 		boolean moveMade=false;
 		Coordinate coord=null;

@@ -1,4 +1,9 @@
-package versionGUI;
+package battleGame.src.versionGUI;
+
+/**
+ * Exception class for ships.
+ * Used if player gives the coordinate that is greater than the [A-J][0-9]
+*/
 
 public class CoordinateOutOfBonds extends Exception {
 

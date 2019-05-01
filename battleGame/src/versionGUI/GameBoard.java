@@ -1,4 +1,11 @@
-package versionGUI;
+package battleGame.src.versionGUI;
+
+
+/**
+ * Class for the board of players.
+ * Class to check if player hit, kill the ships and win the game.
+ * Class which have the method starting the game.
+ */
 
 public class GameBoard {
 	final public  static int BOARDIM=10;
@@ -6,7 +13,9 @@ public class GameBoard {
 	int currentPlayer;
 	boolean gameWon=false;
 
-	
+	/*!
+	 * Check if hit 
+	 */
 	public boolean checkIfHit(Coordinate move) {
 		int nextPlayer=1-currentPlayer;
 		for(int i=0;i<players[nextPlayer].ships.length;i++) {
@@ -15,6 +24,9 @@ public class GameBoard {
 		return false;
 	}
 	
+	/*!
+	 * Check if kill the ship 
+	 */
 	public boolean checkIfKill(Coordinate move) {
 		int nextPlayer;
 		if(currentPlayer==0)nextPlayer=1;
@@ -29,6 +41,9 @@ public class GameBoard {
 		return false;
 	}
 	
+	/*!
+	 * Check if win the game 
+	 */
 	public boolean checkIfWin() {
 		int nextPlayer;
 		if(currentPlayer==0)nextPlayer=1;
@@ -41,6 +56,9 @@ public class GameBoard {
 		return true;
 	}
 	
+	/*!
+	 * Clear the console. 
+	 */	
 	public final static void clearConsole()//DOESN'T WORK !
 	{
 	    try
@@ -65,7 +83,9 @@ public class GameBoard {
 	    }
 	}
 
-	
+	/*!
+	 * Prints the board with the player's hits. 
+	 */
 	public void printHitsBoard(Player p) {
 		System.out.println("Player's game board!");
 		char board[][]=new char[10][10];
@@ -96,7 +116,9 @@ public class GameBoard {
 		System.out.println(boardString);
 	}
 	
-	
+	/*!
+	 * Prints the player's board.
+	 */
 	public static void printBoard(Player p) {
 		System.out.println("Player: "+p.name);
 		char board[][]=new char[10][10];
@@ -128,6 +150,10 @@ public class GameBoard {
 		System.out.println(boardString);
 	}
 	
+	/*!
+	 * Constructor.
+	 * \brief Initialize the players and their boards. 
+	 */
 	public GameBoard() {
 		this.currentPlayer=0;
 		players=new ClientPlayer[2];
@@ -136,7 +162,10 @@ public class GameBoard {
 //        players[0].initializeBoard();
 //        players[1].initializeBoard();
 	}
-	
+	/*!
+	 * Constructor.
+	 * \brief Initialize players' boards. 
+	 */
 	public GameBoard(Player [] players) {
 		this.players=players;
 		this.currentPlayer=0;
@@ -144,8 +173,9 @@ public class GameBoard {
 //        players[1].initializeBoard();
 	}
 	
-	
-	
+	/*!
+	 * Method that begins the game between players. 
+	 */
 	 public void startGame() {
 	        currentPlayer = 0;
 	        while(gameWon==false ) {

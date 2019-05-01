@@ -1,4 +1,5 @@
-package versionGUI;
+package battleGame.src.versionGUI;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -15,6 +16,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.UIManager;
 
+/**
+ * Class which sets the player's strike and ships GUI board.
+ */
 
 public class PlayerGameModeGUI extends JPanel {
 	PlayerPanel playerPanel;
@@ -30,6 +34,10 @@ public class PlayerGameModeGUI extends JPanel {
 	BoardCell[][] boardCells=new BoardCell[GameBoard.BOARDIM][GameBoard.BOARDIM];
 	JButton[][] playerCoordinates=new JButton[GameBoard.BOARDIM][GameBoard.BOARDIM];
 	
+	
+	/*!
+	 * Constructor
+	 */
 	public PlayerGameModeGUI(PlayerPanel playerPanel) {
 		super();
 		this.playerPanel=playerPanel;
@@ -81,6 +89,10 @@ public class PlayerGameModeGUI extends JPanel {
 		
 	}
 	
+	/*!
+	 * Sets the player's strike board.
+	 * Board where player can make his moves against the opponent
+	 */
 	public void setStrikeBoard() {
 		//fill the table with coordinates and buttons
 		for(int i=0;i<GameBoard.BOARDIM+1;i++) {
@@ -103,6 +115,10 @@ public class PlayerGameModeGUI extends JPanel {
 		}
 	}
 	
+	/*!
+	 * Sets the player's ship board.
+	 * Board where player can his own ships 
+	 */
 	public void setPlayerShipsBoard() {
 		for(int i=0;i<GameBoard.BOARDIM+1;i++) {
 			for(int j=0;j<GameBoard.BOARDIM+1;j++) {
@@ -127,6 +143,9 @@ public class PlayerGameModeGUI extends JPanel {
 		updatePlayerShipsBoard();
 	}
 	
+	/*!
+	 * Update the player's board if the opponent had hit the ship or if player added the ship 
+	 */
 	public void updatePlayerShipsBoard() {
 		System.out.println("Update Player Ships Board");
 		for(int i=0;i<GameBoard.BOARDIM;i++) {
@@ -152,30 +171,49 @@ public class PlayerGameModeGUI extends JPanel {
 		}
 	}
 	
+	/*!
+	 * Nested class. Used for board's cells 
+	 */
 	public class BoardCell extends JButton implements ActionListener {
 		Color striked=Color.BLUE;
 		Color hit = Color.RED;
 		boolean wasStriked=false;
 		boolean wasHit=false;
 		
+		/*!
+		 * Constructor 
+		 */
 		public BoardCell() {
 			this.addActionListener(this);
 		}
 
+		/*!
+		 * Set the cell be striked and change its color
+		 */
 		void setStriked() {
 			wasStriked=true;
 			this.setBackground(striked);
 		}
 		
+		/*!
+		 * Set the cell be not striked and change its color
+		 */
 		void setNotStriked() {
 			wasStriked=false;
 			this.setBackground(Color.WHITE);
 		}
+		
+		/*!
+		 * Set the cell be hit and change its color
+		 */
 		void setHit() {
 			wasHit=true;
 			this.setBackground(hit);
 		}
 		
+		/*!
+		 * Set the cell be not hit and change its color
+		 */
 		void setNotHit() {
 			wasHit=false;
 			this.setBackground(Color.WHITE);
@@ -183,6 +221,9 @@ public class PlayerGameModeGUI extends JPanel {
 		
 		
 		@Override
+		/*!
+		 * Perform the actions according to the player's move
+		 */
 		public void actionPerformed(ActionEvent e) {
 			//get clicked cell
 			JButton clicked=(JButton)e.getSource();

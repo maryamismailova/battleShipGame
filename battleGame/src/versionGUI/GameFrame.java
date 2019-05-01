@@ -1,4 +1,4 @@
-package versionGUI;
+package battleGame.src.versionGUI;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -14,14 +14,16 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
-
+/**
+ * Main class for GUI version of the game. 
+ */
 
 public class GameFrame {
 	int gameMode=-1;// 0 - Player/Bot, 1 - Player/Player , 2 - Network (unavailable yet)
 	JFrame frame;
 	JPanel buttonList;
 	
-	public void setGameMode() {
+	public void setGameMode() { //!< Set the game mode and according to the game mode initialize the players and their GUI boards
 		buttonList.setVisible(false);
 		GameBoard game = null;
 		frame.setLayout(new BorderLayout());
@@ -64,6 +66,10 @@ public class GameFrame {
 		frame.getContentPane().add(gameBoard);
 	}
 	
+	/*!
+	 * Constructor.
+	 * Initialize the button list which allows player to select the game mode.
+	 */
 	public GameFrame() {
 		frame=new JFrame();
 		frame.setSize(1000, 500);

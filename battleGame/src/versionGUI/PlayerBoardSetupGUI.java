@@ -1,4 +1,4 @@
-package versionGUI;
+package battleGame.src.versionGUI;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -13,6 +13,10 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
+/**
+ * Class to setup the player's GUI board.
+ */
+
 public class PlayerBoardSetupGUI extends JPanel {
 	PlayerPanel playerPanel;
 	PlayerBoardSetupGUI playerSetup=this;
@@ -24,10 +28,14 @@ public class PlayerBoardSetupGUI extends JPanel {
 	ArrayList<Coordinate> shipCoordinates=new ArrayList();
 	Player player;
 	
+	//! Sets the visibility off.
 	public void setVisibilityOff() {
 		this.setVisible(false);
 	}
 	
+	/*!
+	 * Set the player's board.
+	 */
 	public PlayerBoardSetupGUI(PlayerPanel playerPanel) {
 		super();
 		this.player=playerPanel.player;
@@ -130,29 +138,42 @@ public class PlayerBoardSetupGUI extends JPanel {
         this.add(addButton, gbc);
 	}
 	
-	
+	/*!
+	 * Nested class. Used to set the board's cells
+	 */
 	public class BoardCell extends JButton implements ActionListener {
 		Color selection=Color.BLUE;
 		Color taken = Color.BLACK;
 		boolean selected=false;
 		boolean storedInShip=false;
 		
-		
+		/*!
+		 * Constructor.
+		 */
 		public BoardCell() {
 			this.addActionListener(this);
 		}
 
+		/*!
+		 * Sets the cell to be selected and change the color of the cell
+		 */
 		void setSelected() {
 			selected=true;
 			this.setBackground(selection);
 		}
 		
+		/*!
+		 * Sets the cell to be not selected and change the color of the cell
+		 */
 		void setNotSelected() {
 			selected=false;
 			this.setBackground(Color.WHITE);
 		}
 		
 		@Override
+		/*!
+		 * Perform the action according to the player's move
+		 */
 		public void actionPerformed(ActionEvent e) {
 			JButton clicked=(JButton)e.getSource();
 			for(int i=0;i<GameBoard.BOARDIM;i++) {

@@ -1,12 +1,21 @@
-package version1;
+package battleGame.src.version1;
 
 import java.util.Scanner;
 
-public abstract class Player{
-	Ship[] ships;
-	String name;
-	public abstract void initializeBoard();
+/**
+ * Abstract class for player.
+ * All players will have the same attributes and methods like in this class.
+ */
 
+public abstract class Player{
+	Ship[] ships; //! array to store the ships
+	String name;	//! string to store the name of player
+	public abstract void initializeBoard();
+	public abstract Coordinate makeMove();
+
+	/*!
+	 * Add ship to the player's board.
+	 */
 	public Ship addAShip(String coordinateString, int shipCount) throws CoordinateOutOfBonds , UnavailableShipException {
 		String[] points=coordinateString.split(" ");
 		Coordinate[] coordinates=new Coordinate[points.length];
@@ -40,7 +49,9 @@ public abstract class Player{
 		return new Ship(coordinates);
 	}
 	
-
+	/*!
+	 * Add ship to the player's board.
+	 */
 	public Ship addAShip(Coordinate coordinates[], int shipCount) throws CoordinateOutOfBonds , UnavailableShipException {
 		//CHECK if coordinates are relevant
 		int direction=-1;
@@ -68,11 +79,14 @@ public abstract class Player{
 		return new Ship(coordinates);
 	}
 	
-	
+	/*!
+	 * Check the direction of coordinates.
+	 \brief Look for the position of 2 coordinates and check if they are neighbors vertically or horizontally.
+	 */
 	public int directionOfCoordinates(Coordinate p1, Coordinate p2) throws CoordinateOutOfBonds{
 		//horizontal == 1
 		//vertical == 2
-		//1 poinr =0
+		//1 point =0
 		//inappropriate coordinate  - throw CoordinateOuOfBonds
 		if(p1.x==p2.x && p1.y==p2.y)return 0;
 		else if(p1.x==p2.x && p1.y==p2.y-1) return 2;
@@ -84,8 +98,10 @@ public abstract class Player{
 		
 	}
 	
-	public abstract Coordinate makeMove();
-
+	/*!
+	 * Add hit if player contains the coordinate.
+	 * @param c - coordinate to add
+	 */
 	public void addHitOnPlayer(Coordinate c) {
 		for(int i=0;i<ships.length;i++) {
 			if(ships[i].contains(c)==true) {

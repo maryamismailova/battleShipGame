@@ -1,13 +1,19 @@
-package versionGUI;
+package battleGame.src.versionGUI;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Class for computer if computer-client mode is chosen.
+ * Extends \a Player abstract class
+*/
 public class ComputerPlayer extends Player {
 
 	ArrayList<Coordinate> madeMoves=new ArrayList<Coordinate>();
 
-	
+	/*! Constructor
+	 \param name - name of player 
+	 */
 	public ComputerPlayer(String name) {
 		// TODO Auto-generated constructor stub
 		this.name=name;
@@ -15,6 +21,9 @@ public class ComputerPlayer extends Player {
 	}
 
 	@Override
+	/*! Initialize the board of computer.
+	 * The computer sets the coordinates randomly but taking into account the direction and position of coordinates.
+	*/
 	public void initializeBoard() {
 		// TODO Auto-generated method stub
 		for(int i=0;i<5;i++) {
@@ -56,6 +65,9 @@ public class ComputerPlayer extends Player {
 	}
 
 	@Override
+	/*!
+	 * Make move by randomly choosing the coordinate.
+	 */
 	public Coordinate makeMove() {
 		System.out.println("Player "+this.name+" makes a move: ");
 		boolean moveMade=false;
