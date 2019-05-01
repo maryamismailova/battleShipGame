@@ -1,0 +1,73 @@
+\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1Player}{}\section{battle\+Game.\+src.\+version\+G\+U\+I.\+Player Class Reference}
+\label{classbattleGame_1_1src_1_1versionGUI_1_1Player}\index{battle\+Game.\+src.\+version\+G\+U\+I.\+Player@{battle\+Game.\+src.\+version\+G\+U\+I.\+Player}}
+
+
+Inheritance diagram for battle\+Game.\+src.\+version\+G\+U\+I.\+Player\+:
+% FIG 0
+
+
+Collaboration diagram for battle\+Game.\+src.\+version\+G\+U\+I.\+Player\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Player_ab4fef2f3cd8fdec477af910c8797edbc}{initialize\+Board} ()\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1Player_ab4fef2f3cd8fdec477af910c8797edbc}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1Player_ab4fef2f3cd8fdec477af910c8797edbc}
+
+\begin{DoxyCompactList}\small\item\em string to store the name of player \end{DoxyCompactList}\item 
+\hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Ship}{Ship} \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Player_aa3b8b9efab505e3eb9200336137aadf5}{add\+A\+Ship} (String coordinate\+String, int ship\+Count)  throws Coordinate\+Out\+Of\+Bonds , Unavailable\+Ship\+Exception 
+\item 
+\hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Ship}{Ship} \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Player_a0e8eaba04b5a759dcb86f550fabbb192}{add\+A\+Ship} (\hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Coordinate}{Coordinate} coordinates\mbox{[}$\,$\mbox{]}, int ship\+Count)  throws Coordinate\+Out\+Of\+Bonds , Unavailable\+Ship\+Exception 
+\item 
+int \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Player_adc3fecd1897bf7ebea1f1251f072a21e}{direction\+Of\+Coordinates} (\hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Coordinate}{Coordinate} p1, \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Coordinate}{Coordinate} p2)  throws Coordinate\+Out\+Of\+Bonds
+\begin{DoxyCompactList}\small\item\em Look for the position of 2 coordinates and check if they are neighbors vertically or horizontally. \end{DoxyCompactList}\item 
+abstract \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Coordinate}{Coordinate} \hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Player_ac6f8b666efadd259312e94af143c6397}{make\+Move} ()
+\item 
+void {\bfseries add\+Hit\+On\+Player} (\hyperlink{classbattleGame_1_1src_1_1versionGUI_1_1Coordinate}{Coordinate} c)\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1Player_a4cec2e70db8720ceba5db3f146f88517}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1Player_a4cec2e70db8720ceba5db3f146f88517}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class for player. All players will have the same attributes and methods like in this class. 
+
+\subsection{Member Function Documentation}
+\index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player}!add\+A\+Ship@{add\+A\+Ship}}
+\index{add\+A\+Ship@{add\+A\+Ship}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player}}
+\subsubsection[{\texorpdfstring{add\+A\+Ship(\+String coordinate\+String, int ship\+Count)}{addAShip(String coordinateString, int shipCount)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ship} battle\+Game.\+src.\+version\+G\+U\+I.\+Player.\+add\+A\+Ship (
+\begin{DoxyParamCaption}
+\item[{String}]{coordinate\+String, }
+\item[{int}]{ship\+Count}
+\end{DoxyParamCaption}
+) throws {\bf Coordinate\+Out\+Of\+Bonds} , {\bf Unavailable\+Ship\+Exception}\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1Player_aa3b8b9efab505e3eb9200336137aadf5}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1Player_aa3b8b9efab505e3eb9200336137aadf5}
+Add ship to the player\textquotesingle{}s board. \index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player}!add\+A\+Ship@{add\+A\+Ship}}
+\index{add\+A\+Ship@{add\+A\+Ship}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player}}
+\subsubsection[{\texorpdfstring{add\+A\+Ship(\+Coordinate coordinates[], int ship\+Count)}{addAShip(Coordinate coordinates[], int shipCount)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ship} battle\+Game.\+src.\+version\+G\+U\+I.\+Player.\+add\+A\+Ship (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordinate}}]{coordinates\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{ship\+Count}
+\end{DoxyParamCaption}
+) throws {\bf Coordinate\+Out\+Of\+Bonds} , {\bf Unavailable\+Ship\+Exception}\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1Player_a0e8eaba04b5a759dcb86f550fabbb192}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1Player_a0e8eaba04b5a759dcb86f550fabbb192}
+Add ship to the player\textquotesingle{}s board. \index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player}!direction\+Of\+Coordinates@{direction\+Of\+Coordinates}}
+\index{direction\+Of\+Coordinates@{direction\+Of\+Coordinates}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player}}
+\subsubsection[{\texorpdfstring{direction\+Of\+Coordinates(\+Coordinate p1, Coordinate p2)}{directionOfCoordinates(Coordinate p1, Coordinate p2)}}]{\setlength{\rightskip}{0pt plus 5cm}int battle\+Game.\+src.\+version\+G\+U\+I.\+Player.\+direction\+Of\+Coordinates (
+\begin{DoxyParamCaption}
+\item[{{\bf Coordinate}}]{p1, }
+\item[{{\bf Coordinate}}]{p2}
+\end{DoxyParamCaption}
+) throws {\bf Coordinate\+Out\+Of\+Bonds}\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1Player_adc3fecd1897bf7ebea1f1251f072a21e}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1Player_adc3fecd1897bf7ebea1f1251f072a21e}
+
+
+Look for the position of 2 coordinates and check if they are neighbors vertically or horizontally. 
+
+Check the direction of coordinates. \index{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player}!make\+Move@{make\+Move}}
+\index{make\+Move@{make\+Move}!battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player@{battle\+Game\+::src\+::version\+G\+U\+I\+::\+Player}}
+\subsubsection[{\texorpdfstring{make\+Move()}{makeMove()}}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Coordinate} battle\+Game.\+src.\+version\+G\+U\+I.\+Player.\+make\+Move (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [abstract]}}\hypertarget{classbattleGame_1_1src_1_1versionGUI_1_1Player_ac6f8b666efadd259312e94af143c6397}{}\label{classbattleGame_1_1src_1_1versionGUI_1_1Player_ac6f8b666efadd259312e94af143c6397}
+Read from player the coordinate 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Player.\+java\end{DoxyCompactItemize}
