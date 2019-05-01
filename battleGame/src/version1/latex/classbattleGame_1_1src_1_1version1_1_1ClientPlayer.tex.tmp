@@ -1,0 +1,59 @@
+\hypertarget{classbattleGame_1_1src_1_1version1_1_1ClientPlayer}{}\section{battle\+Game.\+src.\+version1.\+Client\+Player Class Reference}
+\label{classbattleGame_1_1src_1_1version1_1_1ClientPlayer}\index{battle\+Game.\+src.\+version1.\+Client\+Player@{battle\+Game.\+src.\+version1.\+Client\+Player}}
+
+
+Inheritance diagram for battle\+Game.\+src.\+version1.\+Client\+Player\+:
+% FIG 0
+
+
+Collaboration diagram for battle\+Game.\+src.\+version1.\+Client\+Player\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classbattleGame_1_1src_1_1version1_1_1ClientPlayer_a68f28378c95c66042ab1e6351dec06ae}{initialize\+Board} ()
+\item 
+\hyperlink{classbattleGame_1_1src_1_1version1_1_1ClientPlayer_a36670cb9f180d33e014ab840ba5fb83d}{Client\+Player} (String name)
+\item 
+\hyperlink{classbattleGame_1_1src_1_1version1_1_1Coordinate}{Coordinate} \hyperlink{classbattleGame_1_1src_1_1version1_1_1ClientPlayer_a3e7bd4bcbfaefa3b15f58c5879b9c7a4}{make\+Move} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for player if player-\/player mode is chosen. Extends {\itshape \hyperlink{classbattleGame_1_1src_1_1version1_1_1Player}{Player}} abstract class 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{battle\+Game\+::src\+::version1\+::\+Client\+Player@{battle\+Game\+::src\+::version1\+::\+Client\+Player}!Client\+Player@{Client\+Player}}
+\index{Client\+Player@{Client\+Player}!battle\+Game\+::src\+::version1\+::\+Client\+Player@{battle\+Game\+::src\+::version1\+::\+Client\+Player}}
+\subsubsection[{\texorpdfstring{Client\+Player(\+String name)}{ClientPlayer(String name)}}]{\setlength{\rightskip}{0pt plus 5cm}battle\+Game.\+src.\+version1.\+Client\+Player.\+Client\+Player (
+\begin{DoxyParamCaption}
+\item[{String}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1version1_1_1ClientPlayer_a36670cb9f180d33e014ab840ba5fb83d}{}\label{classbattleGame_1_1src_1_1version1_1_1ClientPlayer_a36670cb9f180d33e014ab840ba5fb83d}
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ the name of player \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{battle\+Game\+::src\+::version1\+::\+Client\+Player@{battle\+Game\+::src\+::version1\+::\+Client\+Player}!initialize\+Board@{initialize\+Board}}
+\index{initialize\+Board@{initialize\+Board}!battle\+Game\+::src\+::version1\+::\+Client\+Player@{battle\+Game\+::src\+::version1\+::\+Client\+Player}}
+\subsubsection[{\texorpdfstring{initialize\+Board()}{initializeBoard()}}]{\setlength{\rightskip}{0pt plus 5cm}void battle\+Game.\+src.\+version1.\+Client\+Player.\+initialize\+Board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1version1_1_1ClientPlayer_a68f28378c95c66042ab1e6351dec06ae}{}\label{classbattleGame_1_1src_1_1version1_1_1ClientPlayer_a68f28378c95c66042ab1e6351dec06ae}
+Read from player the coordinates of the ship and add them as one ship if everything is okay. Can read 5 coordinates maximum in one line. The coordinates should be separated. For example, the input looks like\+: A1 A2 \index{battle\+Game\+::src\+::version1\+::\+Client\+Player@{battle\+Game\+::src\+::version1\+::\+Client\+Player}!make\+Move@{make\+Move}}
+\index{make\+Move@{make\+Move}!battle\+Game\+::src\+::version1\+::\+Client\+Player@{battle\+Game\+::src\+::version1\+::\+Client\+Player}}
+\subsubsection[{\texorpdfstring{make\+Move()}{makeMove()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coordinate} battle\+Game.\+src.\+version1.\+Client\+Player.\+make\+Move (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbattleGame_1_1src_1_1version1_1_1ClientPlayer_a3e7bd4bcbfaefa3b15f58c5879b9c7a4}{}\label{classbattleGame_1_1src_1_1version1_1_1ClientPlayer_a3e7bd4bcbfaefa3b15f58c5879b9c7a4}
+Read from player the coordinate 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client\+Player.\+java\end{DoxyCompactItemize}
