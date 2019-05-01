@@ -1,22 +1,22 @@
-#Battleship Game Project
+# Battleship Game Project
 
 BattleShip game written in Java for Software Engineering class.
 
 ![Screen of BattleShip Game](img/gameScreen.jpg)
 
-##How to play
-###Goal of the game:
+## How to play
+#### Goal of the game:
     - Sink all of the opponent's ships.
-###Game setup:
+#### Game setup:
     - Each player places his/her ships on the grid.
     - Ships: **5 ships of 5,4,3,2,1 cells**; placed vertically or horizontally on a 10x10 grid.
 ![Screen of board setup in GUI version](img/boardSetup.jpg)
 
-###Rules:
+#### Rules:
     - Take turns firing shots by clicking on cells.
     - In case of hit continue till you win, or till you miss, and switch two second player.
 
-###Versions:
+### Versions:
 To run the project see in releases section v1.2 and v2 for two versions of the game.
 **v1.2** - completeConsole:
   The game played on 1 terminal by 2 players, or one player with a computer bot.
@@ -32,19 +32,19 @@ To run the project see in releases section v1.2 and v2 for two versions of the g
  ![Console game interface](img/consoleInterface.jpg)
  ![GUI version interface](img/gameHit.jpg)
 
-###Branches:
+### Branches:
 *completeConsole* and *2Pl1GUI* are the holders for the two versions of the game. (2Pl1GUI has both versions within itself).
 
-###Installing:
+### Installing:
 See releases section, download zip or tar.gz file of the the project.
 Open the downloaded project folder in one of Java IDE's that you use.
 For v1.2 : run GameClass.java
 For v2 : run GameFrame.java
 
-###Authors:
+### Authors:
 
     Maryam Ismayilova - L2 Computer Science student in French-Azerbaijani University
     Naila Ibrahimova - L2 Computer Science student in French-Azerbaijani University
 
-###Acknowledgments:
+### Acknowledgments:
     Google and Stackoverflow
