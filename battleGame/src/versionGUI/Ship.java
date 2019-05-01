@@ -1,4 +1,4 @@
-package battleGame.src.versionGUI;
+package versionGUI;
 
 import java.util.ArrayList;
 

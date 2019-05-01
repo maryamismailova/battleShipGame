@@ -1,4 +1,4 @@
-package battleGame.src.versionGUI;
+package versionGUI;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
